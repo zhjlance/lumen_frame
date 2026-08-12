@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProCam Node 用户手册 | LumenFrame</title>
+    <title>Lumen Node 用户手册 | LumenFrame</title>
     <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
@@ -26,8 +26,8 @@
         </aside>
 
         <main class="docs-content">
-            <h1>ProCam Node 官方用户使用手册</h1>
-            <p>欢迎使用 <strong>ProCam Node</strong>。本应用专为广电制播与专业直播团队设计，旨在将您的 Android 设备转化为一台具备极低延迟、广播级稳定性的 NDI / SRT 无线导播摄像机。本手册将详细介绍基础操作、专业监控工具以及高级的跨平台远程控制（RESTful API）功能。</p>
+            <h1>Lumen Node 官方用户使用手册</h1>
+            <p>欢迎使用 <strong>Lumen Node</strong>。本应用专为广电制播与专业直播团队设计，旨在将您的 Android 设备转化为一台具备极低延迟、广播级稳定性的 NDI / SRT 无线导播摄像机。本手册将详细介绍基础操作、专业监控工具以及高级的跨平台远程控制（RESTful API）功能。</p>
 
             <h2 id="quick-start">1. 快速入门 (Quick Start)</h2>
             <h3>1.1 基础连接</h3>
@@ -35,11 +35,11 @@
                 <li><strong>连接网络</strong>：请确保手机与您的导播台（如 vMix, OBS, Tricaster）连接在<strong>同一个局域网 (Wi-Fi)</strong> 下。</li>
                 <li><strong>授权访问</strong>：首次启动时，请允许应用获取“相机”与“麦克风”权限。</li>
                 <li><strong>一键开播</strong>：点击底部中央的 <strong>LIVE</strong> 按钮。按钮变红即代表流媒体已开始在局域网内广播。</li>
-                <li><strong>导播台接收</strong>：在 vMix 或 OBS 中添加 NDI 信号源，选择名为 <code>ProCam_Android_Live</code>（或您在设置中自定义的名称）的机位即可。</li>
+                <li><strong>导播台接收</strong>：在 vMix 或 OBS 中添加 NDI 信号源，选择名为 <code>Lumen_Android_Live</code>（或您在设置中自定义的名称）的机位即可。</li>
             </ol>
 
             <h2 id="hud-monitor">2. 界面与 HUD 监控系统</h2>
-            <p>ProCam Node 提供了全面且专业的屏幕监控体系（HUD），所有参数一目了然：</p>
+            <p>Lumen Node 提供了全面且专业的屏幕监控体系（HUD），所有参数一目了然：</p>
             
             <h3>2.1 顶部状态栏</h3>
             <ul>
@@ -81,7 +81,7 @@
             <h2 id="stream-settings">4. 网络流与编码设置 (Settings)</h2>
             
             <h3>4.1 硬件帧率锁定 (Hardware CFR)</h3>
-            <p>ProCam Node 使用严格的硬件恒定帧率（CFR）管线。您可以强制锁定传感器输出为 <strong>30 FPS</strong> 或 <strong>60 FPS</strong>，彻底杜绝普通手机软件在暗光下自动掉帧导致的“声画不同步”问题。</p>
+            <p>Lumen Node 使用严格的硬件恒定帧率（CFR）管线。您可以强制锁定传感器输出为 <strong>30 FPS</strong> 或 <strong>60 FPS</strong>，彻底杜绝普通手机软件在暗光下自动掉帧导致的“声画不同步”问题。</p>
 
             <h3>4.2 NDI 与 SRT 双模推流</h3>
             <p>我们采用了高兼容性的 <strong>H.264 (AVC)</strong> 硬件编码底层，确保与所有新老导播台 100% 兼容。</p>
@@ -92,10 +92,10 @@
             <p><em>(注：NDI 和 SRT 可同时开启，实现内网导播与异地监看的双轨并发。)</em></p>
 
             <h3>4.3 本地无损录像 (Local ISO)</h3>
-            <p>点击右侧的 <strong>REC</strong> 按钮，应用会在推流的同时，将极高画质的纯净 H.264 原始视频流转储至手机的 <code>Movies/ProCamNode</code> 目录。点击 <strong>SNAP</strong> 可拍摄全分辨率 RAW 级无损照片。</p>
+            <p>点击右侧的 <strong>REC</strong> 按钮，应用会在推流的同时，将极高画质的纯净 H.264 原始视频流转储至手机的 <code>Movies/LumenNode</code> 目录。点击 <strong>SNAP</strong> 可拍摄全分辨率 RAW 级无损照片。</p>
 
             <h2 id="rest-api">5. 高级功能：跨平台远程反向控制 (RESTful API)</h2>
-            <p>针对演播室的固定机位、摇臂机位及无人值守场景，ProCam Node 内置了原生的微型 HTTP 控制网关。导播无需触碰手机，即可通过局域网远程控制手机的硬件马达！</p>
+            <p>针对演播室的固定机位、摇臂机位及无人值守场景，Lumen Node 内置了原生的微型 HTTP 控制网关。导播无需触碰手机，即可通过局域网远程控制手机的硬件马达！</p>
             <p><strong>控制前提</strong>：控制台与手机处于同一局域网内。<br><strong>控制端口</strong>：<code>8080</code></p>
 
             <h3>5.1 API 接口列表</h3>
@@ -121,7 +121,7 @@
             <p>保存后，在 <code>Shortcuts</code> 中将此脚本绑定到键盘的 <code>+</code> 号键。导播按下 <code>+</code> 键，远处手机即可瞬间推近。</p>
 
             <h2 id="pro-version">6. Pro 版与试用限制说明</h2>
-            <p>ProCam Node 免费版提供完整的专业制播体验，但存在以下限制：</p>
+            <p>Lumen Node 免费版提供完整的专业制播体验，但存在以下限制：</p>
             <ol>
                 <li>画面底部带有水印。</li>
                 <li>连续推流时长上限为 <strong>15 分钟</strong>。到达时限后，系统将自动切断视频流并在手机端显示黑屏警告。</li>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProCam Node User Manual | LumenFrame</title>
+    <title>Lumen Node User Manual | LumenFrame</title>
     <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
@@ -26,8 +26,8 @@
         </aside>
 
         <main class="docs-content">
-            <h1>ProCam Node Official User Manual</h1>
-            <p>Welcome to <strong>ProCam Node</strong>. This application is designed for broadcast production and professional live-streaming teams, aiming to transform your Android device into an ultra-low latency, broadcast-grade NDI / SRT wireless studio camera. This manual details basic operations, monitoring tools, and advanced cross-platform remote control (RESTful API) features.</p>
+            <h1>Lumen Node Official User Manual</h1>
+            <p>Welcome to <strong>Lumen Node</strong>. This application is designed for broadcast production and professional live-streaming teams, aiming to transform your Android device into an ultra-low latency, broadcast-grade NDI / SRT wireless studio camera. This manual details basic operations, monitoring tools, and advanced cross-platform remote control (RESTful API) features.</p>
 
             <h2 id="quick-start">1. Quick Start</h2>
             <h3>1.1 Basic Connection</h3>
@@ -35,11 +35,11 @@
                 <li><strong>Network Connection</strong>: Ensure your phone and your switcher (e.g., vMix, OBS, Tricaster) are connected to the <strong>same local network (Wi-Fi)</strong>.</li>
                 <li><strong>Permissions</strong>: Upon first launch, grant the app "Camera" and "Microphone" permissions.</li>
                 <li><strong>Go Live</strong>: Tap the central <strong>LIVE</strong> button at the bottom. The button turns red, indicating the stream is broadcasting over the LAN.</li>
-                <li><strong>Switcher Reception</strong>: Add an NDI source in vMix or OBS, and select the camera named <code>ProCam_Android_Live</code>.</li>
+                <li><strong>Switcher Reception</strong>: Add an NDI source in vMix or OBS, and select the camera named <code>Lumen_Android_Live</code>.</li>
             </ol>
 
             <h2 id="hud-monitor">2. Interface & HUD Monitoring System</h2>
-            <p>ProCam Node provides a comprehensive professional Heads-Up Display (HUD):</p>
+            <p>Lumen Node provides a comprehensive professional Heads-Up Display (HUD):</p>
             
             <h3>2.1 Top Status Bar</h3>
             <ul>
@@ -81,7 +81,7 @@
             <h2 id="stream-settings">4. Stream & Encoding Settings</h2>
             
             <h3>4.1 Hardware CFR Lock</h3>
-            <p>ProCam Node uses a strict hardware Constant Frame Rate (CFR) pipeline. You can lock sensor output to <strong>30 FPS</strong> or <strong>60 FPS</strong> to eliminate A/V sync issues caused by frame drops in low light.</p>
+            <p>Lumen Node uses a strict hardware Constant Frame Rate (CFR) pipeline. You can lock sensor output to <strong>30 FPS</strong> or <strong>60 FPS</strong> to eliminate A/V sync issues caused by frame drops in low light.</p>
 
             <h3>4.2 NDI & SRT Dual Streaming</h3>
             <ul>
@@ -91,10 +91,10 @@
             <p><em>(Note: Both can run simultaneously.)</em></p>
 
             <h3>4.3 Local ISO Recording</h3>
-            <p>Tap <strong>REC</strong> to record a pure H.264 video stream to the <code>Movies/ProCamNode</code> directory while streaming. Tap <strong>SNAP</strong> for a full-resolution RAW photo.</p>
+            <p>Tap <strong>REC</strong> to record a pure H.264 video stream to the <code>Movies/LumenNode</code> directory while streaming. Tap <strong>SNAP</strong> for a full-resolution RAW photo.</p>
 
             <h2 id="rest-api">5. Advanced: RESTful API Remote Control</h2>
-            <p>ProCam Node features a built-in micro HTTP gateway for remote control over LAN.<br><strong>Control Port</strong>: <code>8080</code></p>
+            <p>Lumen Node features a built-in micro HTTP gateway for remote control over LAN.<br><strong>Control Port</strong>: <code>8080</code></p>
 
             <h3>5.1 API Endpoints</h3>
             <ul>
