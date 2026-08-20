@@ -28,14 +28,14 @@
 
         <main class="docs-content">
             <h1>Lumen Node Official User Manual</h1>
-            <p>Welcome to <strong>Lumen Node</strong>. Designed for broadcast production and professional live-streaming teams, this app transforms your mobile device into an ultra-low latency, broadcast-grade wireless studio camera. This manual details basic operations, monitoring tools, and the industry-first <strong>Director's Web HUD</strong>.</p>
+            <p>Welcome to <strong>Lumen Node</strong>. Designed for broadcast production and professional live-streaming teams, this app transforms your mobile device into an ultra-low latency, broadcast-grade <strong>SRT / RTSP</strong> wireless studio camera. This manual details basic operations, monitoring tools, and the industry-first <strong>Director's Web HUD</strong>.</p>
 
             <h2 id="quick-start">1. Quick Start</h2>
             <ol>
                 <li><strong>Network</strong>: Ensure your phone and switcher (e.g., vMix, OBS) or Web monitor are on the <strong>same local network (Wi-Fi)</strong>.</li>
                 <li><strong>Permissions</strong>: Grant "Camera" and "Microphone" permissions upon first launch.</li>
                 <li><strong>Go Live</strong>: Tap the <strong>START LIVE</strong> button. With a smooth iOS-style animation, the dynamic island will show a blue <code>ON AIR</code> indicator, meaning the stream is live.</li>
-                <li><strong>Receiving</strong>: Add an NDI/SRT/RTSP source in vMix/OBS to pull the pristine, low-latency feed.</li>
+                <li><strong>Receiving</strong>: Add an <strong>SRT or RTSP</strong> source in vMix/OBS to pull the pristine, low-latency feed.</li>
             </ol>
 
             <h2 id="hud-monitor">2. Interface & HUD Monitoring System</h2>
@@ -47,7 +47,7 @@
             </ul>
 
             <h3>2.2 Studio Tally System</h3>
-            <p>Deeply integrated with the NDI Advanced Tally protocol, the screen borders change color in real-time based on switcher operations:</p>
+            <p>Deeply integrated with studio-grade Tally synchronization, the screen borders change color in real-time based on switcher operations:</p>
             <ul>
                 <li><strong>No Border</strong>: Camera is on standby.</li>
                 <li><strong>Green Border (PVW)</strong>: Your feed is in the switcher's Preview, about to go live.</li>
@@ -62,12 +62,11 @@
             </ul>
 
             <h2 id="stream-settings">4. Multi-Protocol Streaming</h2>
-            <p>Built on a pure C++ core, Lumen Node supports zero-copy distribution across three concurrent protocols:</p>
+            <p>Built on a pure C++ core, Lumen Node supports zero-copy distribution across dual concurrent protocols:</p>
             <ul>
                 <li><strong>Hardware CFR Lock</strong>: Forces sensor output to 30 or 60 FPS, eliminating A/V sync issues caused by frame drops in low light.</li>
-                <li><strong>NDI Mode</strong>: The industry standard for low-latency local broadcasting.</li>
                 <li><strong>SRT Mode (Caller)</strong>: For cross-WAN jitter-resistant transmission. E.g., <code>srt://192.168.1.100:5000?mode=caller</code>.</li>
-                <li><strong>RTSP Mode</strong>: Automatically runs on local port <code>8554</code>. Pull the feed directly using VLC via <code>rtsp://&lt;IP&gt;:8554/live</code>.</li>
+                <li><strong>RTSP Mode</strong>: Automatically runs on local port <code>8554</code>. Pull the feed directly using VLC, vMix or OBS via <code>rtsp://&lt;IP&gt;:8554/live</code>.</li>
             </ul>
 
             <h2 id="web-director">5. Killer Feature: Web Director's HUD</h2>
