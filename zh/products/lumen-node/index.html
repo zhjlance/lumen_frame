@@ -20,113 +20,78 @@
             <a href="#quick-start">1. 快速入门</a>
             <a href="#hud-monitor">2. 界面与 HUD 监控</a>
             <a href="#camera-control">3. 专业影像控制</a>
-            <a href="#stream-settings">4. 网络流与编码设置</a>
-            <a href="#rest-api">5. 跨平台远程反向控制</a>
-            <a href="#pro-version">6. Pro 版说明</a>
+            <a href="#stream-settings">4. 网络流与多协议并发</a>
+            <a href="#web-director">5. 局域网 Web 导演控制台</a>
+            <a href="#rest-api">6. 跨平台远程反向控制</a>
+            <a href="#pro-version">7. Pro 版说明</a>
         </aside>
 
         <main class="docs-content">
             <h1>Lumen Node 官方用户使用手册</h1>
-            <p>欢迎使用 <strong>Lumen Node</strong>。本应用专为广电制播与专业直播团队设计，旨在将您的 Android 设备转化为一台具备极低延迟、广播级稳定性的 NDI / SRT 无线导播摄像机。本手册将详细介绍基础操作、专业监控工具以及高级的跨平台远程控制（RESTful API）功能。</p>
+            <p>欢迎使用 <strong>Lumen Node</strong>。本应用专为广电制播与专业直播团队设计，旨在将您的移动设备转化为一台具备极低延迟、广播级稳定性的无线导播摄像机。本手册将详细介绍基础操作、专业监控工具以及业内首创的 <strong>Web 导演控制台</strong>。</p>
 
             <h2 id="quick-start">1. 快速入门 (Quick Start)</h2>
-            <h3>1.1 基础连接</h3>
             <ol>
-                <li><strong>连接网络</strong>：请确保手机与您的导播台（如 vMix, OBS, Tricaster）连接在<strong>同一个局域网 (Wi-Fi)</strong> 下。</li>
+                <li><strong>连接网络</strong>：请确保手机与您的导播台（如 vMix, OBS）或 Web 监看设备连接在<strong>同一个局域网 (Wi-Fi)</strong> 下。</li>
                 <li><strong>授权访问</strong>：首次启动时，请允许应用获取“相机”与“麦克风”权限。</li>
-                <li><strong>一键开播</strong>：点击底部中央的 <strong>LIVE</strong> 按钮。按钮变红即代表流媒体已开始在局域网内广播。</li>
-                <li><strong>导播台接收</strong>：在 vMix 或 OBS 中添加 NDI 信号源，选择名为 <code>Lumen_Android_Live</code>（或您在设置中自定义的名称）的机位即可。</li>
+                <li><strong>一键开播</strong>：点击屏幕下方的 <strong>START LIVE</strong> 按钮，伴随 iOS 级原生阻尼动效，状态栏将切换为蓝色的 <code>ON AIR</code>，代表流媒体已开始在局域网内广播。</li>
+                <li><strong>导播台接收</strong>：在 vMix 或 OBS 中添加 NDI/SRT/RTSP 信号源即可直接拉取极低延迟的纯净画面。</li>
             </ol>
 
             <h2 id="hud-monitor">2. 界面与 HUD 监控系统</h2>
-            <p>Lumen Node 提供了全面且专业的屏幕监控体系（HUD），所有参数一目了然：</p>
-            
-            <h3>2.1 顶部状态栏</h3>
+            <h3>2.1 动态岛状态栏 (Dynamic Island)</h3>
+            <p>屏幕顶部采用业内先进的悬浮动态岛设计：</p>
             <ul>
-                <li><strong>Tally 状态</strong>：显示当前机位状态（详见 2.2 Tally 演播室指引）。</li>
-                <li><strong>实时流数据</strong>：实时显示当前输出帧率（FPS）与编码码率（Mbps）以及丢包率（L: 0.0%）。</li>
-                <li><strong>硬件健康度</strong>：
-                    <ul>
-                        <li><strong>B:</strong> 电池剩余电量。</li>
-                        <li><strong>W:</strong> Wi-Fi 信号强度（dBm）。低于 -70dBm 时变红，提示网络可能存在抖动。</li>
-                        <li><strong>WARM / HOT:</strong> 内部主板温度监控。当设备过热时会出现红色警告，请注意设备散热。</li>
-                    </ul>
-                </li>
+                <li><strong>蓝色 LIVE 呼吸灯</strong>：网络推流处于激活状态 (ON AIR)。</li>
+                <li><strong>红色 REC 呼吸灯</strong>：本地 ISO 高画质录制处于激活状态 (RECORDING)。</li>
             </ul>
 
             <h3>2.2 Tally 演播室指引系统</h3>
-            <p>本应用深度集成了 NDI Advanced Tally 协议，屏幕边框将根据导播台的操作实时变换颜色，方便摄像师确认机位状态：</p>
+            <p>深度集成 NDI Advanced Tally 协议，屏幕边框将根据导播台的操作实时变换颜色：</p>
             <ul>
-                <li><strong>无边框 (STANDBY / LIVE)</strong>：机位处于待机或推流中，但导播台<strong>未</strong>选用您的画面。</li>
-                <li><strong>绿框 (PVW - Preview)</strong>：您的画面已被切入导播台的<strong>预览区</strong>（下一个画面即将切给您，请摄像师稳住镜头）。</li>
-                <li><strong>红框 (PGM - Program)</strong>：您的画面正在<strong>正式播出</strong>（观众正在看着您）。</li>
+                <li><strong>无边框</strong>：机位处于待机。</li>
+                <li><strong>绿框 (PVW)</strong>：您的画面已被切入导播台预览区，即将播出。</li>
+                <li><strong>红框 (PGM)</strong>：您的画面正在正式播出。</li>
             </ul>
 
             <h2 id="camera-control">3. 专业影像控制</h2>
-            <p>点击屏幕任意位置可唤出 UI 面板。在专业直播中，画面的忽明忽暗和反复对焦是致命的。</p>
             <ul>
-                <li><strong>触控对焦</strong>：单击屏幕画面中的任意物体，摄像机会自动对该区域进行测光并对焦。</li>
-                <li><strong>AF-L / AE-L / AWB-L</strong>：左侧提供 自动对焦 (AF)、自动曝光 (AE) 和 自动白平衡 (AWB) 的物理锁定开关。点击变红即代表锁定当前参数，防止被闲杂人员走动干扰。</li>
-                <li><strong>EV 曝光补偿</strong>：底部提供 <code>-2.0</code> 到 <code>+2.0</code> 的无级曝光补偿拨杆。</li>
+                <li><strong>触控对焦</strong>：单击屏幕，摄像机会自动对该区域测光并对焦。</li>
+                <li><strong>3A 物理锁定</strong>：左侧提供 AF-L (对焦), AE-L (曝光), AWB-L (白平衡) 的硬件级锁定开关。</li>
+                <li><strong>曝光与辅助工具</strong>：底部提供 <code>-3.0</code> 到 <code>+3.0</code> 无级曝光滑动条。点击左侧设置图标可开启<strong>斑马纹 (Zebra)</strong> 和 <strong>峰值对焦 (Peaking)</strong>。</li>
             </ul>
 
-            <h3>3.2 辅助监看工具 (Assist Tools)</h3>
-            <p>点击左下角的快捷参数按钮（三点图标）可唤出辅助工具：</p>
+            <h2 id="stream-settings">4. 网络流与多协议并发</h2>
+            <p>Lumen Node 采用纯正 C++ 底层构建，支持三协议并发零拷贝分发：</p>
             <ul>
-                <li><strong>斑马纹 (Zebra)</strong>：高亮显示画面中严重过曝（死白）的区域，帮助您精准控制曝光。</li>
-                <li><strong>峰值对焦 (Peaking)</strong>：用红色高亮显示画面中焦平面最清晰的物体边缘，确保对焦绝对锐利。</li>
-                <li><strong>镜头切换 (Lens)</strong>：支持前置 / 后置摄像头无缝切换。</li>
+                <li><strong>硬件帧率锁定 (Hardware CFR)</strong>：强制锁定传感器输出为 30 或 60 FPS，彻底杜绝手机暗光掉帧导致的“声画不同步”。</li>
+                <li><strong>NDI 模式</strong>：局域网低延迟导播行业标准。</li>
+                <li><strong>SRT 模式 (Caller)</strong>：跨公网的弱网抗抖动传输。格式如：<code>srt://192.168.1.100:5000?mode=caller</code>。</li>
+                <li><strong>RTSP 模式</strong>：自动常驻局域网端口 <code>8554</code>，可用 VLC 等播放器直接拉取 <code>rtsp://&lt;手机IP&gt;:8554/live</code>。</li>
             </ul>
 
-            <h2 id="stream-settings">4. 网络流与编码设置 (Settings)</h2>
-            
-            <h3>4.1 硬件帧率锁定 (Hardware CFR)</h3>
-            <p>Lumen Node 使用严格的硬件恒定帧率（CFR）管线。您可以强制锁定传感器输出为 <strong>30 FPS</strong> 或 <strong>60 FPS</strong>，彻底杜绝普通手机软件在暗光下自动掉帧导致的“声画不同步”问题。</p>
-
-            <h3>4.2 NDI 与 SRT 双模推流</h3>
-            <p>我们采用了高兼容性的 <strong>H.264 (AVC)</strong> 硬件编码底层，确保与所有新老导播台 100% 兼容。</p>
-            <ul>
-                <li><strong>NDI 模式</strong>：适用于局域网低延迟导播。可自定义 NDI 通道名称。</li>
-                <li><strong>SRT 模式 (Caller)</strong>：适用于跨公网/外网的异地连线。请在输入框中填写目标 Listener 的地址，格式如：<code>srt://192.168.1.100:5000?mode=caller</code>。</li>
-            </ul>
-            <p><em>(注：NDI 和 SRT 可同时开启，实现内网导播与异地监看的双轨并发。)</em></p>
-
-            <h3>4.3 本地无损录像 (Local ISO)</h3>
-            <p>点击右侧的 <strong>REC</strong> 按钮，应用会在推流的同时，将极高画质的纯净 H.264 原始视频流转储至手机的 <code>Movies/LumenNode</code> 目录。点击 <strong>SNAP</strong> 可拍摄全分辨率 RAW 级无损照片。</p>
-
-            <h2 id="rest-api">5. 高级功能：跨平台远程反向控制 (RESTful API)</h2>
-            <p>针对演播室的固定机位、摇臂机位及无人值守场景，Lumen Node 内置了原生的微型 HTTP 控制网关。导播无需触碰手机，即可通过局域网远程控制手机的硬件马达！</p>
-            <p><strong>控制前提</strong>：控制台与手机处于同一局域网内。<br><strong>控制端口</strong>：<code>8080</code></p>
-
-            <h3>5.1 API 接口列表</h3>
-            <ul>
-                <li><strong>1. 镜头推拉变焦 (Zoom)</strong>
-                    <br><strong>URL:</strong> <code>http://&lt;手机IP&gt;:8080/api/control?action=zoom&amp;value=&lt;倍数&gt;</code>
-                    <br><strong>说明:</strong> 控制物理镜头变焦。<code>1.0</code> 为原焦距，<code>2.0</code> 为 2倍放大。
-                </li>
-                <li><strong>2. 曝光补偿调节 (Exposure)</strong>
-                    <br><strong>URL:</strong> <code>http://&lt;手机IP&gt;:8080/api/control?action=exposure&amp;value=&lt;EV值&gt;</code>
-                    <br><strong>说明:</strong> 远程增减画面亮度。支持负数（如 <code>-1.0</code>）和正数（如 <code>1.5</code>）。
-                </li>
-                <li><strong>3. 远程启停推流 (Stream Toggle)</strong>
-                    <br><strong>URL:</strong> <code>http://&lt;手机IP&gt;:8080/api/control?action=stream&amp;value=&lt;状态&gt;</code>
-                    <br><strong>说明:</strong> 紧急掐断或恢复推流。<code>0</code> 代表停止，<code>1</code> 代表开始。
-                </li>
-            </ul>
-
-            <h3>5.2 演播室实战集成案例 (vMix & Companion)</h3>
-            <p>您可以将上述 API 完美集成到传统导播工作流中：</p>
-            <p><strong>在 vMix 中绑定快捷键</strong>：打开 vMix <code>Settings</code> -> <code>Scripting</code>，新建一个脚本，仅需粘贴一行代码（注意替换为手机真实 IP）：</p>
-            <pre><code>(New System.Net.WebClient()).DownloadString("http://192.168.0.138:8080/api/control?action=zoom&amp;value=2.0")</code></pre>
-            <p>保存后，在 <code>Shortcuts</code> 中将此脚本绑定到键盘的 <code>+</code> 号键。导播按下 <code>+</code> 键，远处手机即可瞬间推近。</p>
-
-            <h2 id="pro-version">6. Pro 版与试用限制说明</h2>
-            <p>Lumen Node 免费版提供完整的专业制播体验，但存在以下限制：</p>
+            <h2 id="web-director">5. 杀手级功能：局域网 Web 导演控制台</h2>
+            <p>针对多机位外场直播或单兵作战，Lumen Node 内置了免安装的 Web 导演台。</p>
+            <p><strong>使用方法</strong>：</p>
             <ol>
-                <li>画面底部带有水印。</li>
-                <li>连续推流时长上限为 <strong>15 分钟</strong>。到达时限后，系统将自动切断视频流并在手机端显示黑屏警告。</li>
+                <li>确保控制端（电脑/iPad）与手机处于同一网络。</li>
+                <li>在浏览器地址栏输入：<code>http://&lt;手机IP&gt;:8080</code>。</li>
+                <li><strong>实时图传</strong>：网页将以极低 CPU 占用的 MJPEG 协议实时显示摄像机监控画面。</li>
+                <li><strong>双向状态穿透</strong>：在网页点击 <strong>START LIVE</strong> 或 <strong>START REC</strong>，手机端不仅会立即执行硬件指令，其动态岛 UI 也会毫无延迟地同步变换状态！</li>
             </ol>
-            <p><strong>解锁专业版 (PRO)</strong>：您可以通过点击 UI 面板右上角的 <strong>"UPGRADE TO PRO"</strong> 进行应用内订阅/买断。解锁后将彻底去除水印、解除所有时间限制，享受 7x24 小时无间断工业级制播体验。</p>
+
+            <h2 id="rest-api">6. 跨平台远程反向控制 (RESTful API)</h2>
+            <p>所有 Web 导演台的功能均开放了 REST API，方便您接入 Companion 或 vMix 宏脚本（端口 <code>8080</code>）：</p>
+            <ul>
+                <li><strong>推拉变焦</strong>：<code>/api/control?action=zoom&value=&lt;1.0/3.0&gt;</code></li>
+                <li><strong>曝光补偿</strong>：<code>/api/control?action=exposure&value=&lt;-1.5/2.0&gt;</code></li>
+                <li><strong>启停推流</strong>：<code>/api/control?action=stream&value=&lt;0/1&gt;</code></li>
+                <li><strong>启停录制</strong>：<code>/api/control?action=record&value=&lt;0/1&gt;</code></li>
+                <li><strong>状态轮询</strong>：<code>/api/state</code> (返回 JSON 格式的软硬件状态)</li>
+            </ul>
+
+            <h2 id="pro-version">7. Pro 版说明</h2>
+            <p>免费版提供完整的工业级制播体验，但画面底部附带水印，且单次连续推流上限为 <strong>15 分钟</strong>。点击 UI 右上角的 <strong>"TRIAL"</strong> 按钮升级至 PRO 版，即可彻底解除限制，享受 7x24 小时无间断输出。</p>
         </main>
     </div>
 </body>
