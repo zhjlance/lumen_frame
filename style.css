@@ -47,19 +47,6 @@ body, html {
 }
 .btn-outline { background: transparent; border: 1px solid var(--text-muted); }
 
-.docs-layout { display: flex; gap: 3rem; margin-top: 2rem; }
-.docs-sidebar {
-    width: 260px; flex-shrink: 0; position: sticky; top: 100px; height: calc(100vh - 100px); overflow-y: auto;
-}
-.docs-sidebar a { display: block; color: var(--text-muted); text-decoration: none; padding: 0.5rem 0; transition: color 0.2s; }
-.docs-sidebar a:hover { color: var(--primary-color); }
-.docs-content { flex-grow: 1; max-width: 800px; padding-bottom: 5rem; }
-.docs-content h1, .docs-content h2, .docs-content h3 { color: #fff; border-bottom: 1px solid #2d3748; padding-bottom: 0.5rem; margin-top: 2rem; }
-.docs-content code { background: #2d3748; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; color: #a78bfa; }
-.docs-content pre code { background: transparent; padding: 0; color: inherit; }
-.docs-content pre { background: #000; padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid #2d3748; color: #a78bfa; }
-
-/* 多语言切换器样式 */
 .lang-switcher { margin-left: 1.5rem; display: inline-block; }
 .lang-switcher select {
     background: var(--card-bg);
@@ -73,7 +60,6 @@ body, html {
 }
 .lang-switcher select:focus { border-color: var(--primary-color); }
 
-/* 海外合规页脚样式 */
 .footer {
     margin-top: 6rem;
     padding: 3rem 2rem;
@@ -81,23 +67,7 @@ body, html {
     background-color: #121419;
     text-align: center;
 }
-.footer p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-}
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-.footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-.footer-links a:hover {
-    color: var(--primary-color);
-}
+.footer p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--primary-color); }
