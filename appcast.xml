@@ -3,20 +3,21 @@
   <channel>
     <title>Lumen Switcher Changelog</title>
     <item>
-      <title>Version 1.0.5</title>
+      <title>Version 1.0.0</title>
       <description>
         <![CDATA[
         <ul>
-          <li>Your release changelog description here.</li>
+          <li>Official Initial Release of Lumen Switcher v1.0.0</li>
+          <li>Added smart dual-modal A/V slicing engine.</li>
+          <li>Added one-click FCPXML export for DaVinci Resolve & Premiere Pro.</li>
         </ul>
         ]]>
       </description>
-      <!-- sparkle:version 必须大于当前本地版本 -->
-      <enclosure url="https://github.com/zhjlance/LumenSwitcher-Releases/releases/download/v1.0.5/Lumen_Switcher_v1.0.5_Setup.exe"
-                 sparkle:version="1.0.5"
-                 length="15432100"
+      <!-- [核心修改 3]: 链接与版本号严格匹配 1.0.0 和新命名的 Installer 文件 -->
+      <enclosure url="https://github.com/zhjlance/lumen_switcher/releases/download/v1.0.0/LumenSwitcher-Installer-v1.0.0.exe"
+                 sparkle:version="1.0.0"
+                 length="0"
                  type="application/octet-stream" />
     </item>
   </channel>
 </rss>
-
