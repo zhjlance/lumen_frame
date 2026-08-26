@@ -72,3 +72,32 @@ body, html {
     outline: none;
 }
 .lang-switcher select:focus { border-color: var(--primary-color); }
+
+/* 海外合规页脚样式 */
+.footer {
+    margin-top: 6rem;
+    padding: 3rem 2rem;
+    border-top: 1px solid #2d3748;
+    background-color: #121419;
+    text-align: center;
+}
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
