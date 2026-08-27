@@ -6,10 +6,8 @@
     <title>LumenFrame | 广播级音视频软件引擎</title>
     <link rel="stylesheet" href="../style.css">
     
-    <!-- 引入 Paddle.js 核心库 -->
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     <script type="text/javascript">
-        // 初始化 Paddle 收银台
         Paddle.Environment.set('production'); 
         Paddle.Initialize({ 
             token: 'live_6bc00f2e74e6adf39009e06a494' 
@@ -45,15 +43,34 @@
                 <h3>Lumen Switcher</h3>
                 <p>轻量级多模态本地视频智能切片与粗剪工具。支持音视频双轨分析、实况视频帧级预览联动，一键导出时间线并无缝衔接达芬奇与 Final Cut Pro。</p>
                 
-                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.5rem;">
+                <div style="background: rgba(13, 110, 253, 0.1); border: 1px dashed var(--accent-color); padding: 10px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1rem;">
+                    <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.4;">
+                        💡 <strong>新人提示</strong>：下载即享 <strong>30 天全功能免费试用</strong>。试用满意后可购买永久授权。
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
                     <div style="display: flex; gap: 10px;">
-                        <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">免费试用 30 天</a>
+                        <a id="dl-btn-switcher" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">免费下载 (Windows)</a>
                         <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">购买永久 License</a>
                     </div>
-                    <span style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
+                    <span id="dl-hash-switcher" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
                         SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
                     </span>
                 </div>
+
+                <!-- 智能系统识别脚本 -->
+                <script>
+                    if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+                        var dlBtn = document.getElementById('dl-btn-switcher');
+                        var dlHash = document.getElementById('dl-hash-switcher');
+                        // 预留 macOS DMG 链接
+                        dlBtn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
+                        dlBtn.innerText = "免费下载 (macOS)";
+                        // 预留 macOS 版本的指纹，等编译出 Mac 版后替换这串 000
+                        dlHash.innerText = "SHA256: 0000000000000000000000000000000000000000000000000000000000000000";
+                    }
+                </script>
                 
                 <div style="margin-top: 1rem;">
                     <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem;">阅读 Lumen Switcher 用户手册 &rarr;</a>

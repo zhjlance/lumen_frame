@@ -6,10 +6,8 @@
     <title>LumenFrame | Broadcast-Grade AV Engine</title>
     <link rel="stylesheet" href="../style.css">
     
-    <!-- Include Paddle.js Core -->
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     <script type="text/javascript">
-        // Initialize Paddle Checkout
         Paddle.Environment.set('production'); 
         Paddle.Initialize({ 
             token: 'live_6bc00f2e74e6adf39009e06a494' 
@@ -45,15 +43,32 @@
                 <h3>Lumen Switcher</h3>
                 <p>Lightweight multi-modal AI video rough-cut & slicing tool. Features audio/motion dual-track scanning, live scrub preview, and one-click timeline export to DaVinci Resolve and Final Cut Pro.</p>
                 
-                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.5rem;">
+                <div style="background: rgba(13, 110, 253, 0.1); border: 1px dashed var(--accent-color); padding: 10px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1rem;">
+                    <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.4;">
+                        💡 <strong>Notice</strong>: Enjoy a <strong>30-day full-feature free trial</strong> upon installation. Purchase a lifetime license anytime.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
                     <div style="display: flex; gap: 10px;">
-                        <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">30-Day Free Trial</a>
+                        <a id="dl-btn-switcher-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">Free Trial for Windows</a>
                         <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">Buy Lifetime License</a>
                     </div>
-                    <span style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
+                    <span id="dl-hash-switcher-en" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
                         SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
                     </span>
                 </div>
+
+                <!-- 核心：智能系统识别脚本 -->
+                <script>
+                    if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+                        var dlBtn = document.getElementById('dl-btn-switcher-en');
+                        var dlHash = document.getElementById('dl-hash-switcher-en');
+                        dlBtn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
+                        dlBtn.innerText = "Free Trial for macOS";
+                        dlHash.innerText = "SHA256: 0000000000000000000000000000000000000000000000000000000000000000";
+                    }
+                </script>
                 
                 <div style="margin-top: 1rem;">
                     <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem;">Read Lumen Switcher User Manual &rarr;</a>
