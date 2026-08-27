@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Switcher User Manual | LumenFrame</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="brand">LumenFrame</a>
+        <div class="nav-links">
+            <a href="../../index.html">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container docs-layout">
+        <aside class="docs-sidebar">
+            <h3>Navigation</h3>
+            <a href="#intro">1. Introduction</a>
+            <a href="#import">2. Media Import & Formats</a>
+            <a href="#analysis">3. Dual-Modal Analysis</a>
+            <a href="#export">4. Export & Workflow</a>
+            <a href="#license">5. Trial & Activation</a>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Lumen Switcher Official User Manual</h1>
+            <p>Welcome to <strong>Lumen Switcher</strong>. Built on a native C++ core engine, this desktop-grade intelligent video slicing and rough-cut tool is designed to help you skip the tedious task of sorting through footage, generating ready-to-use timelines that seamlessly integrate with professional NLEs.</p>
+
+            <h2 id="intro">1. Introduction</h2>
+            <p>Lumen Switcher abandons the bloated architecture of traditional editing software in favor of a minimalist workflow: <strong>Drag & Drop &rarr; Set Thresholds &rarr; Smart Scan &rarr; Export Project</strong>. Whether dealing with hours of live stream replays or massive conference recordings, it rapidly eliminates dead air and static scenes.</p>
+
+            <h2 id="import">2. Media Import & Compatibility</h2>
+            <ul>
+                <li><strong>Formats</strong>: Fully compatible with mainstream media containers, including <code>.mp4</code>, <code>.mov</code>, <code>.mkv</code>, <code>.avi</code>, and broadcast-grade <code>.ts</code>.</li>
+                <li><strong>Underlying Decoder</strong>: Built-in FFmpeg and OpenCV hardware acceleration support ensures smooth parsing of H.264, HEVC (H.265), and ProRes.</li>
+                <li><strong>Operation</strong>: Simply drag and drop files into the main interface. The engine will automatically extract foundational A/V properties and resolution info.</li>
+            </ul>
+
+            <h2 id="analysis">3. Dual-Modal Analysis Engine</h2>
+            <p>Upon clicking <strong>"Render & Analyze"</strong>, Lumen Switcher initiates a dual-track scanning mechanism:</p>
+            <ul>
+                <li><strong>Silence Gate</strong>: Automatically detects audio track levels. Continuous segments below the set threshold (default -35.0 dB) are marked as invalid.</li>
+                <li><strong>Motion Gate</strong>: Compares frame-by-frame visual differences to eliminate prolonged static scenes.</li>
+                <li><strong>Interactive Waveform</strong>: After analysis, a high-precision audio waveform is generated. You can double-click any segment to manually toggle its state.</li>
+            </ul>
+
+            <h2 id="export">4. Advanced Export & Workflows</h2>
+            <p>We provide two distinct delivery paths to meet varying precision requirements:</p>
+            <ol>
+                <li><strong>Export FCPXML (Highly Recommended)</strong>: Instantly generate a Final Cut Pro XML file. You can import this directly into <strong>DaVinci Resolve</strong>, <strong>Final Cut Pro</strong>, or <strong>Premiere Pro</strong>. All cut points are perfectly preserved as a non-destructive timeline.</li>
+                <li><strong>Export Physical MP4 File</strong>:
+                    <ul>
+                        <li><strong>Fast Mode (Remux)</strong>: Cuts and seamlessly concatenates the video stream at keyframes without re-encoding. Extremely fast.</li>
+                        <li><strong>Precise Mode (Re-encode)</strong>: Decodes and re-encodes frame-by-frame, ensuring absolute frame-accurate precision.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2 id="license">5. 30-Day Free Trial & Device Licensing</h2>
+            <p>Lumen Switcher offers a generous evaluation period and utilizes industry-standard "Node-Locked" hardware binding:</p>
+            <ul>
+                <li><strong>30-Day Unrestricted Trial</strong>: After initial installation, you can experience all export features free for 30 days. Once the trial expires, a permanent license must be purchased to continue exporting.</li>
+                <li><strong>Activation</strong>: Enter your purchased License Key in the settings interface. The system captures a unique motherboard fingerprint to authorize the device. OS reinstallation does not affect license validity.</li>
+                <li><strong>Unbinding/Transfer</strong>: While activated, you can release the current device's quota by deactivating the license, allowing you to activate the software on a new machine.</li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>

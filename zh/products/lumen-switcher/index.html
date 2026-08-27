@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Switcher 用户手册 | LumenFrame</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="brand">LumenFrame</a>
+        <div class="nav-links">
+            <a href="../../index.html">返回首页</a>
+        </div>
+    </nav>
+
+    <div class="container docs-layout">
+        <aside class="docs-sidebar">
+            <h3>目录导航</h3>
+            <a href="#intro">1. 产品简介</a>
+            <a href="#import">2. 媒体导入与兼容性</a>
+            <a href="#analysis">3. 多模态双轨分析</a>
+            <a href="#export">4. 高级导出与工作流</a>
+            <a href="#license">5. 试用期与设备授权</a>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Lumen Switcher 官方用户使用手册</h1>
+            <p>欢迎使用 <strong>Lumen Switcher</strong>。这是一款基于原生 C++ 核心引擎打造的桌面级视频粗剪与智能切片工具，旨在为您跳过繁琐的“挑素材”阶段，直接生成可用的时间线，完美衔接专业级 NLE (非线性编辑) 软件。</p>
+
+            <h2 id="intro">1. 产品简介</h2>
+            <p>Lumen Switcher 摈弃了传统剪辑软件臃肿的架构，采用极简的交互逻辑：<strong>拖入素材 &rarr; 设定阈值 &rarr; 智能扫描 &rarr; 导出工程</strong>。无论是长达数小时的直播回放录像，还是海量的会议视频，它都能在极短时间内剔除无效片段。</p>
+
+            <h2 id="import">2. 媒体导入与兼容性</h2>
+            <ul>
+                <li><strong>格式支持</strong>：全面兼容市面主流媒体容器，包括 <code>.mp4</code>, <code>.mov</code>, <code>.mkv</code>, <code>.avi</code> 以及广播级 <code>.ts</code> 格式。</li>
+                <li><strong>底层解码</strong>：内建 FFmpeg 与 OpenCV 硬件加速支持，无论 H.264、HEVC(H.265) 还是 ProRes 均可流畅解析。</li>
+                <li><strong>操作方式</strong>：直接将文件拖拽至应用主界面，引擎将自动提取视音频基础属性及分辨率信息。</li>
+            </ul>
+
+            <h2 id="analysis">3. 多模态双轨分析引擎</h2>
+            <p>点击 <strong>"Render & Analyze"</strong> 后，Lumen Switcher 将启动双模态分析机制：</p>
+            <ul>
+                <li><strong>Silence Gate (静音过滤)</strong>：自动探测音轨电平，低于设定阈值（默认 -35.0 dB）的持续片段将被判定为无效。</li>
+                <li><strong>Motion Gate (动态过滤)</strong>：逐帧比对画面差异，剔除长时间静止无变化的废片。</li>
+                <li><strong>交互式波形图</strong>：分析完成后，下方将生成高精度的音频波形图。您可以双击任意片段进行手动反转操作。</li>
+            </ul>
+
+            <h2 id="export">4. 高级导出与工作流接入</h2>
+            <p>我们提供两种截然不同的交付路径，满足不同精度的制作需求：</p>
+            <ol>
+                <li><strong>导出 FCPXML (强烈推荐)</strong>：一键生成 Final Cut Pro XML 协议文件。您可以将其直接导入至 <strong>DaVinci Resolve (达芬奇)</strong>、<strong>Final Cut Pro</strong> 或 <strong>Premiere Pro</strong> 中，所有切点会以非破坏性时间线的形式完美还原。</li>
+                <li><strong>导出物理 MP4 实体文件</strong>：
+                    <ul>
+                        <li><strong>Fast Mode (极速重封装模式)</strong>：直接在关键帧处对视频流进行切割并无缝拼接，速度极快。</li>
+                        <li><strong>Precise Mode (精准重编码模式)</strong>：逐帧解码并重新压制，确保每一帧切点绝对精准。</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2 id="license">5. 试用期与设备授权管理</h2>
+            <p>Lumen Switcher 为所有用户提供良心的试用机制，并采用高安全性“一机一码”硬件绑定策略：</p>
+            <ul>
+                <li><strong>30天无限制试用</strong>：首次下载安装后，您可以免费体验 30 天的完整导出功能。试用期结束后，需在官网购买永久 License 以继续使用。</li>
+                <li><strong>激活绑定</strong>：购买后在设置界面输入 License Key，系统将采集主板指纹进行硬件授权。卸载重装系统不影响授权有效性。</li>
+                <li><strong>换机与解绑</strong>：在激活状态下，点击解绑按钮即可释放当前设备名额，随后您可以在全新设备上再次激活。</li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>
