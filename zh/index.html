@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumenFrame | 广播级音视频软件引擎</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    
+    <!-- 引入 Paddle.js 核心库 -->
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script type="text/javascript">
+        // 初始化 Paddle 收银台
+        Paddle.Environment.set('production'); 
+        Paddle.Initialize({ 
+            token: '替换为你的_Paddle_Client_Token' 
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -35,10 +44,18 @@
             <div class="product-card">
                 <h3>Lumen Switcher</h3>
                 <p>轻量级多模态本地视频智能切片与粗剪工具。支持音视频双轨分析、实况视频帧级预览联动，一键导出时间线并无缝衔接达芬奇与 Final Cut Pro。</p>
-                <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
-                    <a href="https://github.com/zhjlance/lumen_switcher/releases/latest" class="btn">免费下载</a>
-                    <a href="https://lumenframe.lemonsqueezy.com/buy/YOUR_PRODUCT_ID?embed=1" class="btn btn-outline lemonsqueezy-button">获取 License</a>
+                
+                <!-- [核心修改]: 优化按钮布局，接入最新下载直链与 Paddle Checkout -->
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.5rem;">
+                    <div style="display: flex; gap: 10px;">
+                        <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">免费下载</a>
+                        <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: '替换为你的_Paddle_Price_ID', quantity: 1 }] }); return false;">获取 License</a>
+                    </div>
+                    <span style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
+                        SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
+                    </span>
                 </div>
+                
             </div>
         </div>
     </div>
