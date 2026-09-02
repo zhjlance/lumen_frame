@@ -51,22 +51,20 @@ body, html {
     margin: 0 auto;
 }
 
-/* 终极防爆布局：改用绝对锁死宽高的 div 画布，彻底抛弃 img 标签 */
+/* 极限压缩高度到 120px，收紧上下羽化边缘 */
 .hero-banner-visual {
     width: 100%;
     max-width: 680px; 
-    height: 180px; /* 物理锁死高度，绝不会再撑爆屏幕 */
+    height: 120px; 
     margin: 0 auto 2.5rem auto;
     
-    /* 将你的大图设为背景，路径相对于当前 style.css */
     background-image: url('assets/og-banner.png'); 
     background-size: cover; 
-    background-position: center center; /* 绝对居中对齐，精准提取文字和波形核心区 */
+    background-position: center center; 
     background-repeat: no-repeat;
     
-    /* 添加上下渐变羽化边缘，使其与黑底网页完美融合，呈现高级质感 */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
 .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; letter-spacing: -1px; }
@@ -125,6 +123,12 @@ body, html {
     transition: border-color 0.2s;
 }
 .lang-switcher select:focus, .lang-switcher select:hover { border-color: var(--accent-color); }
+
+/* 强制重写原生 option 标签的黑底白字样式 */
+.lang-switcher select option {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
 
 .footer {
     margin-top: 4rem;
