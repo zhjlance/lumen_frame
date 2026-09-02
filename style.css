@@ -46,14 +46,12 @@ body, html {
 
 .hero { text-align: center; padding: 3rem 1rem 5rem; position: relative; }
 
-/* 解除了原有 900px 的限制，放宽至 1200px 匹配容器边界 */
 .hero-wrapper {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* 解除了原有 800px 的限制，放宽至 1000px，让宽图得以舒展 */
 .hero-banner {
     width: 100%;
     max-width: 1000px; 
