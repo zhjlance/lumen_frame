@@ -44,7 +44,7 @@ body, html {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
-.hero { text-align: center; padding: 3rem 1rem 5rem; position: relative; }
+.hero { text-align: center; padding: 6rem 1rem 5rem; position: relative; }
 
 .hero-wrapper {
     position: relative;
@@ -52,19 +52,7 @@ body, html {
     margin: 0 auto;
 }
 
-.hero-banner {
-    width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto 2.5rem auto;
-}
-.hero-banner img {
-    width: 100%;
-    height: auto; 
-    display: block;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4)); 
-}
-
-.hero h1 { font-size: 3.2rem; margin-bottom: 1rem; letter-spacing: -1px; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
 .hero h1 span.highlight { color: var(--accent-color); }
 .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
 
