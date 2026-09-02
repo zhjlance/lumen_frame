@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumenFrame | Broadcast-Grade AV Engine</title>
     <link rel="icon" type="image/png" href="../assets/favicon-32.png">
-    <link rel="stylesheet" href="../style.css">
+    
+    <!-- 同样的防缓存处理 -->
+    <link rel="stylesheet" href="../style.css?v=3">
     
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
     <script type="text/javascript">
@@ -35,10 +37,8 @@
 
     <div class="container hero">
         <div class="hero-wrapper">
-            <!-- 套用精准裁切框，完美提取中心画面 -->
-            <div class="hero-banner-crop">
-                <img src="../assets/og-banner.png" alt="LumenFrame Engine">
-            </div>
+            <!-- 替换为空画布模式 -->
+            <div class="hero-banner-visual"></div>
 
             <h1>Redefine <span class="highlight">Professional AV</span> Productivity</h1>
             <p>Providing ultra-low latency, broadcast-grade streaming solutions for small live production teams, OB vans, and independent creators.</p>
