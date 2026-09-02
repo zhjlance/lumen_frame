@@ -18,7 +18,6 @@
 <body>
     <nav class="navbar">
         <a href="index.html" class="brand">
-            <!-- 英文版结构与中文版完全对齐 -->
             <img src="../assets/favicon-32.png" alt="Icon">
             LumenFrame
         </a>
@@ -36,12 +35,16 @@
 
     <div class="container hero">
         <div class="hero-wrapper">
-            <img src="../assets/og-banner.png" alt="LumenFrame Engine" class="hero-logo">
+            <!-- 套用精准裁切框，完美提取中心画面 -->
+            <div class="hero-banner-crop">
+                <img src="../assets/og-banner.png" alt="LumenFrame Engine">
+            </div>
+
             <h1>Redefine <span class="highlight">Professional AV</span> Productivity</h1>
             <p>Providing ultra-low latency, broadcast-grade streaming solutions for small live production teams, OB vans, and independent creators.</p>
         </div>
         
-        <div class="product-grid" style="margin-top: 2rem;">
+        <div class="product-grid" style="margin-top: 3rem;">
             <div class="product-card">
                 <h3>Lumen Node</h3>
                 <p>Transform your mobile device into a broadcast-grade SRT/RTSP wireless studio camera with ultra-low latency. Features a real-time Web Director's HUD, 3A hardware lock, and local ISO recording.</p>
