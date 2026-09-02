@@ -16,10 +16,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="brand">LumenFrame</a>
+        <a href="index.html" class="brand">
+            <img src="../../assets/mark.svg" alt="LumenFrame" onerror="this.src='../../assets/mark.png'">
+            LumenFrame
+        </a>
         <div class="nav-links">
             <a href="index.html">全部产品</a>
-            <!-- 🚀 修复：指向具体的 about.html 页面 -->
             <a href="about.html">关于我们</a>
             <div class="lang-switcher">
                 <select onchange="window.location.href=this.value;">
@@ -31,10 +33,15 @@
     </nav>
 
     <div class="container hero">
-        <h1>重塑专业音视频生产力</h1>
-        <p>为中小型直播团队、外景导播和独立创作者提供极低延迟、广播级稳定性的全链路流媒体解决方案。</p>
+        <div class="hero-wrapper">
+            <div class="hero-inner">
+                <img src="../../assets/logo.png" alt="LumenFrame Engine" class="hero-logo">
+                <h1>重塑<span class="highlight">专业音视频</span>生产力</h1>
+                <p>为中小型直播团队、外景导播和独立创作者提供极低延迟、广播级稳定性的全链路流媒体解决方案。</p>
+            </div>
+        </div>
         
-        <div class="product-grid">
+        <div class="product-grid" style="margin-top: 2rem;">
             <div class="product-card">
                 <h3>Lumen Node</h3>
                 <p>将您的移动设备转化为具备极低延迟、广播级稳定性的 SRT/RTSP 无线导播摄像机。内置实时 Web 导演控制台，支持 3A 参数硬件级锁定与本地无损 ISO 录像。</p>
@@ -44,37 +51,34 @@
                 <h3>Lumen Switcher</h3>
                 <p>轻量级多模态本地视频智能切片与粗剪工具。支持音视频双轨分析、实况视频帧级预览联动，一键导出时间线并无缝衔接达芬奇与 Final Cut Pro。</p>
                 
-                <div style="background: rgba(13, 110, 253, 0.1); border: 1px dashed var(--accent-color); padding: 10px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(34, 211, 238, 0.05); border: 1px dashed var(--accent-color); padding: 12px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1.5rem;">
                     <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.4;">
                         💡 <strong>新人提示</strong>：下载即享 <strong>30 天全功能免费试用</strong>。试用满意后可购买永久授权。
                     </p>
                 </div>
 
-                <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; gap: 10px;">
                         <a id="dl-btn-switcher" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">免费下载 (Windows)</a>
                         <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">购买永久 License</a>
                     </div>
-                    <span id="dl-hash-switcher" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
+                    <span id="dl-hash-switcher" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.7;">
                         SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
                     </span>
                 </div>
 
-                <!-- 智能系统识别脚本 -->
                 <script>
                     if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
                         var dlBtn = document.getElementById('dl-btn-switcher');
                         var dlHash = document.getElementById('dl-hash-switcher');
-                        // 预留 macOS DMG 链接
                         dlBtn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
                         dlBtn.innerText = "免费下载 (macOS)";
-                        // 预留 macOS 版本的指纹，等编译出 Mac 版后替换这串 000
                         dlHash.innerText = "SHA256: 0000000000000000000000000000000000000000000000000000000000000000";
                     }
                 </script>
                 
-                <div style="margin-top: 1rem;">
-                    <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem;">阅读 Lumen Switcher 用户手册 &rarr;</a>
+                <div style="margin-top: 1.5rem;">
+                    <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-muted)'">阅读 Lumen Switcher 用户手册 &rarr;</a>
                 </div>
             </div>
         </div>
