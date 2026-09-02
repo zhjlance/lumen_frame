@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumenFrame | Broadcast-Grade AV Engine</title>
+    <link rel="icon" type="image/png" href="../assets/favicon-32.png">
     <link rel="stylesheet" href="../style.css">
     
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
@@ -16,10 +17,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="brand">LumenFrame</a>
+        <a href="index.html" class="brand">
+            <img src="../assets/mark.svg" onerror="this.onerror=null; this.src='../assets/mark.png'" alt="LumenFrame Logo">
+            LumenFrame
+        </a>
         <div class="nav-links">
             <a href="index.html">All Products</a>
-            <!-- 🚀 修复：指向具体的 about.html 页面 -->
             <a href="about.html">About Us</a>
             <div class="lang-switcher">
                 <select onchange="window.location.href=this.value;">
@@ -31,10 +34,15 @@
     </nav>
 
     <div class="container hero">
-        <h1>Redefine Professional AV Productivity</h1>
-        <p>Providing ultra-low latency, broadcast-grade streaming solutions for small live production teams, OB vans, and independent creators.</p>
+        <div class="hero-wrapper">
+            <div class="hero-inner">
+                <img src="../assets/logo.png" alt="LumenFrame Engine" class="hero-logo" width="120" height="120">
+                <h1>Redefine <span class="highlight">Professional AV</span> Productivity</h1>
+                <p>Providing ultra-low latency, broadcast-grade streaming solutions for small live production teams, OB vans, and independent creators.</p>
+            </div>
+        </div>
         
-        <div class="product-grid">
+        <div class="product-grid" style="margin-top: 2rem;">
             <div class="product-card">
                 <h3>Lumen Node</h3>
                 <p>Transform your mobile device into a broadcast-grade SRT/RTSP wireless studio camera with ultra-low latency. Features a real-time Web Director's HUD, 3A hardware lock, and local ISO recording.</p>
@@ -44,35 +52,34 @@
                 <h3>Lumen Switcher</h3>
                 <p>Lightweight multi-modal AI video rough-cut & slicing tool. Features audio/motion dual-track scanning, live scrub preview, and one-click timeline export to DaVinci Resolve and Final Cut Pro.</p>
                 
-                <div style="background: rgba(13, 110, 253, 0.1); border: 1px dashed var(--accent-color); padding: 10px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(34, 211, 238, 0.05); border: 1px dashed var(--accent-color); padding: 12px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1.5rem;">
                     <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.4;">
                         💡 <strong>Notice</strong>: Enjoy a <strong>30-day full-feature free trial</strong> upon installation. Purchase a lifetime license anytime.
                     </p>
                 </div>
 
-                <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
                     <div style="display: flex; gap: 10px;">
-                        <a id="dl-btn-switcher-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">Free Trial for Windows</a>
+                        <a id="dl-btn-switcher-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">Free Trial (Windows)</a>
                         <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">Buy Lifetime License</a>
                     </div>
-                    <span id="dl-hash-switcher-en" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all;">
+                    <span id="dl-hash-switcher-en" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.7;">
                         SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
                     </span>
                 </div>
 
-                <!-- 核心：智能系统识别脚本 -->
                 <script>
                     if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
                         var dlBtn = document.getElementById('dl-btn-switcher-en');
                         var dlHash = document.getElementById('dl-hash-switcher-en');
                         dlBtn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
-                        dlBtn.innerText = "Free Trial for macOS";
+                        dlBtn.innerText = "Free Trial (macOS)";
                         dlHash.innerText = "SHA256: 0000000000000000000000000000000000000000000000000000000000000000";
                     }
                 </script>
                 
-                <div style="margin-top: 1rem;">
-                    <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem;">Read Lumen Switcher User Manual &rarr;</a>
+                <div style="margin-top: 1.5rem;">
+                    <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-muted)'">Read Lumen Switcher User Manual &rarr;</a>
                 </div>
             </div>
         </div>
