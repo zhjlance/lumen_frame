@@ -45,23 +45,25 @@ body, html {
 .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
 .hero { text-align: center; padding: 3rem 1rem 5rem; position: relative; }
+
+/* 解除了原有 900px 的限制，放宽至 1200px 匹配容器边界 */
 .hero-wrapper {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* 完美适配新版窄长图的容器 */
+/* 解除了原有 800px 的限制，放宽至 1000px，让宽图得以舒展 */
 .hero-banner {
     width: 100%;
-    max-width: 800px; /* 控制最大宽度，保持紧凑感 */
+    max-width: 1000px; 
     margin: 0 auto 2.5rem auto;
 }
 .hero-banner img {
     width: 100%;
-    height: auto; /* 高度自然等比缩放，绝不撑爆屏幕 */
+    height: auto; 
     display: block;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4)); /* 增加轻微阴影提升浮动质感 */
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4)); 
 }
 
 .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; letter-spacing: -1px; }
