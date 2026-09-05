@@ -5,16 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LumenFrame | Broadcast-Grade AV Engine</title>
     <link rel="icon" type="image/png" href="../assets/favicon-32.png">
-    
-    <link rel="stylesheet" href="../style.css?v=9">
-    
-    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-    <script type="text/javascript">
-        Paddle.Environment.set('production'); 
-        Paddle.Initialize({ 
-            token: 'live_6bc00f2e74e6adf39009e06a494' 
-        });
-    </script>
+    <link rel="stylesheet" href="../style.css?v=10">
 </head>
 <body>
     <nav class="navbar">
@@ -36,7 +27,6 @@
 
     <div class="container hero">
         <div class="hero-wrapper">
-            <!-- Image removed as requested -->
             <h1>Redefine <span class="highlight">Professional AV</span> Productivity</h1>
             <p>Providing ultra-low latency, broadcast-grade streaming solutions for small live production teams, OB vans, and independent creators.</p>
         </div>
@@ -50,35 +40,8 @@
             <div class="product-card">
                 <h3>Lumen Switcher</h3>
                 <p>Lightweight multi-modal AI video rough-cut & slicing tool. Features audio/motion dual-track scanning, live scrub preview, and one-click timeline export to DaVinci Resolve and Final Cut Pro.</p>
-                
-                <div style="background: rgba(34, 211, 238, 0.05); border: 1px dashed var(--accent-color); padding: 12px; border-radius: 6px; margin-top: 1rem; margin-bottom: 1.5rem;">
-                    <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.4;">
-                        💡 <strong>Notice</strong>: Enjoy a <strong>30-day full-feature free trial</strong> upon installation. Purchase a lifetime license anytime.
-                    </p>
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div style="display: flex; gap: 10px;">
-                        <a id="dl-btn-switcher-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn">Free Trial (Windows)</a>
-                        <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">Buy Lifetime License</a>
-                    </div>
-                    <span id="dl-hash-switcher-en" style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.7;">
-                        SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
-                    </span>
-                </div>
-
-                <script>
-                    if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
-                        var dlBtn = document.getElementById('dl-btn-switcher-en');
-                        var dlHash = document.getElementById('dl-hash-switcher-en');
-                        dlBtn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
-                        dlBtn.innerText = "Free Trial (macOS)";
-                        dlHash.innerText = "SHA256: 0000000000000000000000000000000000000000000000000000000000000000";
-                    }
-                </script>
-                
-                <div style="margin-top: 1.5rem;">
-                    <a href="products/lumen-switcher/index.html" style="color: var(--text-muted); text-decoration: underline; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='var(--text-muted)'">Read Lumen Switcher User Manual &rarr;</a>
+                <div style="margin-top: 2rem;">
+                    <a href="products/lumen-switcher/index.html" class="btn" style="display: block; text-align: center;">Explore & Free Download &rarr;</a>
                 </div>
             </div>
         </div>
@@ -88,7 +51,6 @@
         <div class="container">
             <p>&copy; 2026 LumenFrame Studio. All rights reserved.</p>
             <div class="footer-links">
-                <!-- Privacy Policy link correctly added -->
                 <a href="/privacy/index.html">Privacy Policy</a>
                 <a href="/legal/terms.html">Terms of Service</a>
                 <a href="/legal/refund.html">Refund Policy</a>

@@ -3,69 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumen Switcher User Manual | LumenFrame</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <title>Lumen Switcher | High-Performance AI Video Rough-Cut Engine</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
+    <link rel="stylesheet" href="../../../style.css?v=10">
+    
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script type="text/javascript">
+        Paddle.Environment.set('production'); 
+        Paddle.Initialize({ 
+            token: 'live_6bc00f2e74e6adf39009e06a494' 
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../../index.html" class="brand">LumenFrame</a>
+        <a href="../../index.html" class="brand">
+            <img src="../../../assets/favicon-32.png" alt="Icon">
+            LumenFrame
+        </a>
         <div class="nav-links">
             <a href="../../index.html">Back to Home</a>
+            <a href="../../about.html">About Us</a>
+            <div class="lang-switcher">
+                <select onchange="window.location.href=this.value;">
+                    <option value="/zh/products/lumen-switcher/index.html">🇨🇳 简体中文</option>
+                    <option value="/en/products/lumen-switcher/index.html" selected>🇬🇧 English</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <div class="container docs-layout">
-        <aside class="docs-sidebar">
-            <h3>Navigation</h3>
-            <a href="#intro">1. Introduction</a>
-            <a href="#import">2. Media Import & Formats</a>
-            <a href="#analysis">3. Dual-Modal Analysis</a>
-            <a href="#export">4. Export & Workflow</a>
-            <a href="#license">5. Trial & Activation</a>
-        </aside>
+    <div class="container hero" style="padding-bottom: 2rem;">
+        <span class="badge">Native C++17 Hardware Accelerated · 100% Local Processing</span>
+        <h1>Lumen Switcher</h1>
+        <p>Say goodbye to tedious manual cutting. Featuring smart dual-modal A/V gates to automatically purge silences and static scenes, instantly generating clean timelines for DaVinci Resolve and Final Cut Pro.</p>
 
-        <main class="docs-content">
-            <h1>Lumen Switcher Official User Manual</h1>
-            <p>Welcome to <strong>Lumen Switcher</strong>. Built on a native C++ core engine, this desktop-grade intelligent video slicing and rough-cut tool is designed to help you skip the tedious task of sorting through footage, generating ready-to-use timelines that seamlessly integrate with professional NLEs.</p>
+        <!-- Download & Purchase Box -->
+        <div class="download-box">
+            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">Download Desktop App</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+                Enjoy an unrestricted <strong>30-day full-feature free trial</strong> upon installation. Purchase a lifetime license anytime.
+            </p>
 
-            <h2 id="intro">1. Introduction</h2>
-            <p>Lumen Switcher abandons the bloated architecture of traditional editing software in favor of a minimalist workflow: <strong>Drag & Drop &rarr; Set Thresholds &rarr; Smart Scan &rarr; Export Project</strong>. Whether dealing with hours of live stream replays or massive conference recordings, it rapidly eliminates dead air and static scenes.</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a id="btn-primary-download-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
+                    Free Trial (Windows)
+                </a>
+                <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
+                    Buy Lifetime License ($)
+                </a>
+            </div>
 
-            <h2 id="import">2. Media Import & Compatibility</h2>
-            <ul>
-                <li><strong>Formats</strong>: Fully compatible with mainstream media containers, including <code>.mp4</code>, <code>.mov</code>, <code>.mkv</code>, <code>.avi</code>, and broadcast-grade <code>.ts</code>.</li>
-                <li><strong>Underlying Decoder</strong>: Built-in FFmpeg and OpenCV hardware acceleration support ensures smooth parsing of H.264, HEVC (H.265), and ProRes.</li>
-                <li><strong>Operation</strong>: Simply drag and drop files into the main interface. The engine will automatically extract foundational A/V properties and resolution info.</li>
-            </ul>
+            <div style="margin-top: 1.5rem;">
+                <a id="link-alt-platform-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
+                    Switch to macOS (.dmg) download
+                </a>
+            </div>
 
-            <h2 id="analysis">3. Dual-Modal Analysis Engine</h2>
-            <p>Upon clicking <strong>"Render & Analyze"</strong>, Lumen Switcher initiates a dual-track scanning mechanism:</p>
-            <ul>
-                <li><strong>Silence Gate</strong>: Automatically detects audio track levels. Continuous segments below the set threshold (default -35.0 dB) are marked as invalid.</li>
-                <li><strong>Motion Gate</strong>: Compares frame-by-frame visual differences to eliminate prolonged static scenes.</li>
-                <li><strong>Interactive Waveform</strong>: After analysis, a high-precision audio waveform is generated. You can double-click any segment to manually toggle its state.</li>
-            </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <span id="label-sha256-en" style="font-size: 0.75rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.8;">
+                    SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
+                </span>
+            </div>
+        </div>
 
-            <h2 id="export">4. Advanced Export & Workflows</h2>
-            <p>We provide two distinct delivery paths to meet varying precision requirements:</p>
-            <ol>
-                <li><strong>Export FCPXML (Highly Recommended)</strong>: Instantly generate a Final Cut Pro XML file. You can import this directly into <strong>DaVinci Resolve</strong>, <strong>Final Cut Pro</strong>, or <strong>Premiere Pro</strong>. All cut points are perfectly preserved as a non-destructive timeline.</li>
-                <li><strong>Export Physical MP4 File</strong>:
-                    <ul>
-                        <li><strong>Fast Mode (Remux)</strong>: Cuts and seamlessly concatenates the video stream at keyframes without re-encoding. Extremely fast.</li>
-                        <li><strong>Precise Mode (Re-encode)</strong>: Decodes and re-encodes frame-by-frame, ensuring absolute frame-accurate precision.</li>
-                    </ul>
-                </li>
-            </ol>
-
-            <h2 id="license">5. 30-Day Free Trial & Device Licensing</h2>
-            <p>Lumen Switcher offers a generous evaluation period and utilizes industry-standard "Node-Locked" hardware binding:</p>
-            <ul>
-                <li><strong>30-Day Unrestricted Trial</strong>: After initial installation, you can experience all export features free for 30 days. Once the trial expires, a permanent license must be purchased to continue exporting.</li>
-                <li><strong>Activation</strong>: Enter your purchased License Key in the settings interface. The system captures a unique motherboard fingerprint to authorize the device. OS reinstallation does not affect license validity.</li>
-                <li><strong>Unbinding/Transfer</strong>: While activated, you can release the current device's quota by deactivating the license, allowing you to activate the software on a new machine.</li>
-            </ul>
-        </main>
+        <script>
+            if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+                var btn = document.getElementById('btn-primary-download-en');
+                var alt = document.getElementById('link-alt-platform-en');
+                var sha = document.getElementById('label-sha256-en');
+                btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
+                btn.innerText = "Free Trial (macOS .dmg)";
+                alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
+                alt.innerText = "Switch to Windows (.exe) download";
+                sha.innerText = "macOS DMG Notarized & Signed · Native Apple Silicon & Intel support";
+            }
+        </script>
     </div>
+
+    <!-- Core Features -->
+    <div class="container">
+        <h2 style="text-align: center; color: #fff; margin-bottom: 2rem;">Engineered for Creator Productivity</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h4>🎙️ 4 Intelligent Slice Modes</h4>
+                <p>Support for Intelligent (Audio OR Motion), Podcast (Audio Only), Security/Sports (Motion Only), and Strict modes for versatile workflows.</p>
+            </div>
+            <div class="feature-box">
+                <h4>⚡ Ultra-Fast Lossless Remux</h4>
+                <p>Splice hours of lecture footage or live recordings directly at keyframes without re-encoding in just a few seconds.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🎯 Frame-Accurate Precision</h4>
+                <p>Hardware-accelerated decoding ensures frame-accurate slicing with expanded padding margins to preserve natural speech endings.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🎞️ FCPXML Non-Destructive Workflow</h4>
+                <p>Export timelines directly to Final Cut Pro or DaVinci Resolve with rejected parts physically removed or kept as disabled for review.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🔒 Absolute Local Privacy</h4>
+                <p>Zero cloud uploads. All audio/video analysis is executed strictly on local hardware, keeping unreleased project assets confidential.</p>
+            </div>
+            <div class="feature-box">
+                <h4>💻 Platform-Specific Tuning</h4>
+                <p>Deeply integrated with Media Foundation on Windows and VideoToolbox on macOS for minimal CPU footprints.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 LumenFrame Studio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy/index.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/refund.html">Refund Policy</a>
+                <a href="/legal/eula.html">EULA</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

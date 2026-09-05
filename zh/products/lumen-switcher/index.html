@@ -3,69 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumen Switcher 用户手册 | LumenFrame</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <title>Lumen Switcher | 极速多模态视频粗剪与智能切片工具</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
+    <link rel="stylesheet" href="../../../style.css?v=10">
+    
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script type="text/javascript">
+        Paddle.Environment.set('production'); 
+        Paddle.Initialize({ 
+            token: 'live_6bc00f2e74e6adf39009e06a494' 
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../../index.html" class="brand">LumenFrame</a>
+        <a href="../../index.html" class="brand">
+            <img src="../../../assets/favicon-32.png" alt="Icon">
+            LumenFrame
+        </a>
         <div class="nav-links">
             <a href="../../index.html">返回首页</a>
+            <a href="../../about.html">关于我们</a>
+            <div class="lang-switcher">
+                <select onchange="window.location.href=this.value;">
+                    <option value="/zh/products/lumen-switcher/index.html" selected>🇨🇳 简体中文</option>
+                    <option value="/en/products/lumen-switcher/index.html">🇬🇧 English</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <div class="container docs-layout">
-        <aside class="docs-sidebar">
-            <h3>目录导航</h3>
-            <a href="#intro">1. 产品简介</a>
-            <a href="#import">2. 媒体导入与兼容性</a>
-            <a href="#analysis">3. 多模态双轨分析</a>
-            <a href="#export">4. 高级导出与工作流</a>
-            <a href="#license">5. 试用期与设备授权</a>
-        </aside>
+    <div class="container hero" style="padding-bottom: 2rem;">
+        <span class="badge">原生 C++17 硬件加速引擎 · 本地离线处理</span>
+        <h1>Lumen Switcher</h1>
+        <p>告别繁琐的手动切片。采用智能声画双模态门限判定，自动剔除无声与静止画面，秒级生成 DaVinci Resolve 与 Final Cut Pro 可用的无损时间线。</p>
 
-        <main class="docs-content">
-            <h1>Lumen Switcher 官方用户使用手册</h1>
-            <p>欢迎使用 <strong>Lumen Switcher</strong>。这是一款基于原生 C++ 核心引擎打造的桌面级视频粗剪与智能切片工具，旨在为您跳过繁琐的“挑素材”阶段，直接生成可用的时间线，完美衔接专业级 NLE (非线性编辑) 软件。</p>
+        <!-- 下载与购买卡片 -->
+        <div class="download-box">
+            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">下载桌面端安装包</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+                首次安装即享 <strong>30 天全功能免费试用</strong>，体验满意后可随时购买永久许可证。
+            </p>
 
-            <h2 id="intro">1. 产品简介</h2>
-            <p>Lumen Switcher 摈弃了传统剪辑软件臃肿的架构，采用极简的交互逻辑：<strong>拖入素材 &rarr; 设定阈值 &rarr; 智能扫描 &rarr; 导出工程</strong>。无论是长达数小时的直播回放录像，还是海量的会议视频，它都能在极短时间内剔除无效片段。</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a id="btn-primary-download" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
+                    免费下载 (Windows)
+                </a>
+                <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
+                    购买永久 License ($)
+                </a>
+            </div>
 
-            <h2 id="import">2. 媒体导入与兼容性</h2>
-            <ul>
-                <li><strong>格式支持</strong>：全面兼容市面主流媒体容器，包括 <code>.mp4</code>, <code>.mov</code>, <code>.mkv</code>, <code>.avi</code> 以及广播级 <code>.ts</code> 格式。</li>
-                <li><strong>底层解码</strong>：内建 FFmpeg 与 OpenCV 硬件加速支持，无论 H.264、HEVC(H.265) 还是 ProRes 均可流畅解析。</li>
-                <li><strong>操作方式</strong>：直接将文件拖拽至应用主界面，引擎将自动提取视音频基础属性及分辨率信息。</li>
-            </ul>
+            <div style="margin-top: 1.5rem;">
+                <a id="link-alt-platform" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
+                    切换至 macOS 版本 (.dmg) 下载
+                </a>
+            </div>
 
-            <h2 id="analysis">3. 多模态双轨分析引擎</h2>
-            <p>点击 <strong>"Render & Analyze"</strong> 后，Lumen Switcher 将启动双模态分析机制：</p>
-            <ul>
-                <li><strong>Silence Gate (静音过滤)</strong>：自动探测音轨电平，低于设定阈值（默认 -35.0 dB）的持续片段将被判定为无效。</li>
-                <li><strong>Motion Gate (动态过滤)</strong>：逐帧比对画面差异，剔除长时间静止无变化的废片。</li>
-                <li><strong>交互式波形图</strong>：分析完成后，下方将生成高精度的音频波形图。您可以双击任意片段进行手动反转操作。</li>
-            </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                <span id="label-sha256" style="font-size: 0.75rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.8;">
+                    SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
+                </span>
+            </div>
+        </div>
 
-            <h2 id="export">4. 高级导出与工作流接入</h2>
-            <p>我们提供两种截然不同的交付路径，满足不同精度的制作需求：</p>
-            <ol>
-                <li><strong>导出 FCPXML (强烈推荐)</strong>：一键生成 Final Cut Pro XML 协议文件。您可以将其直接导入至 <strong>DaVinci Resolve (达芬奇)</strong>、<strong>Final Cut Pro</strong> 或 <strong>Premiere Pro</strong> 中，所有切点会以非破坏性时间线的形式完美还原。</li>
-                <li><strong>导出物理 MP4 实体文件</strong>：
-                    <ul>
-                        <li><strong>Fast Mode (极速重封装模式)</strong>：直接在关键帧处对视频流进行切割并无缝拼接，速度极快。</li>
-                        <li><strong>Precise Mode (精准重编码模式)</strong>：逐帧解码并重新压制，确保每一帧切点绝对精准。</li>
-                    </ul>
-                </li>
-            </ol>
-
-            <h2 id="license">5. 试用期与设备授权管理</h2>
-            <p>Lumen Switcher 为所有用户提供良心的试用机制，并采用高安全性“一机一码”硬件绑定策略：</p>
-            <ul>
-                <li><strong>30天无限制试用</strong>：首次下载安装后，您可以免费体验 30 天的完整导出功能。试用期结束后，需在官网购买永久 License 以继续使用。</li>
-                <li><strong>激活绑定</strong>：购买后在设置界面输入 License Key，系统将采集主板指纹进行硬件授权。卸载重装系统不影响授权有效性。</li>
-                <li><strong>换机与解绑</strong>：在激活状态下，点击解绑按钮即可释放当前设备名额，随后您可以在全新设备上再次激活。</li>
-            </ul>
-        </main>
+        <script>
+            if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+                var btn = document.getElementById('btn-primary-download');
+                var alt = document.getElementById('link-alt-platform');
+                var sha = document.getElementById('label-sha256');
+                btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
+                btn.innerText = "免费下载 (macOS .dmg)";
+                alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
+                alt.innerText = "切换至 Windows 版本 (.exe) 下载";
+                sha.innerText = "macOS 镜像已签名公证 · 原生支持 Apple Silicon 与 Intel";
+            }
+        </script>
     </div>
+
+    <!-- 核心特性展示 -->
+    <div class="container">
+        <h2 style="text-align: center; color: #fff; margin-bottom: 2rem;">为什么选择 Lumen Switcher？</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h4>🎙️ 四种裁剪判定规则</h4>
+                <p>支持智能宽松 (有声或有动作)、播客模式 (仅认声音)、监控模式 (仅认动作) 与短视频严苛模式，契合任何制作流。</p>
+            </div>
+            <div class="feature-box">
+                <h4>⚡ 极速无损 Remux 导出</h4>
+                <p>对于数小时的会议录像或直播回放，直接在关键帧处切断拼接，免去漫长的重编码时间，几秒钟输出成片。</p>
+            </div>
+            <div class="feature-box">
+                <h4>🎯 帧级精准 Re-encode</h4>
+                <p>硬件级逐帧解码与压制，精准对齐语音起始毫秒，并自动保留自然说话气声与尾音边距 (Padding)。</p>
+            </div>
+            <div class="feature-box">
+                <h4>🎞️ FCPXML 非破坏性工作流</h4>
+                <p>一键导出 FCPXML。支持“物理剔除”或将废片标记为“禁用状态”，方便剪辑师在达芬奇或 FCPX 中二次复核。</p>
+            </div>
+            <div class="feature-box">
+                <h4>🔒 绝对隐私与安全</h4>
+                <p>100% 本地运算。视频文件从不出你的电脑，无须上传云端服务器，保障未公开商业素材与私人录像的安全。</p>
+            </div>
+            <div class="feature-box">
+                <h4>💻 跨平台软硬件优化</h4>
+                <p>专为 Windows (Media Foundation) 与 macOS (VideoToolbox / CoreMedia) 深度调优，极致节省 CPU 负载。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 LumenFrame Studio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy/index.html">隐私政策</a>
+                <a href="/legal/terms.html">服务条款</a>
+                <a href="/legal/refund.html">退款政策</a>
+                <a href="/legal/eula.html">EULA 协议</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
