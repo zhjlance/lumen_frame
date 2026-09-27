@@ -36,7 +36,7 @@
     <div class="container hero" style="padding-bottom: 2rem;">
         <span class="badge">原生 C++17 硬件加速引擎 · 本地离线处理</span>
         <h1>Lumen Switcher</h1>
-        <p>告别繁琐的手动切片。采用智能声画双模态门限判定，自动剔除无声与静止画面，秒级生成 DaVinci Resolve 与 Final Cut Pro 可用的无损时间线。</p>
+        <p>本地粗剪工具：按声音去掉静音段、按画面去掉静止段，也可只保留「既有声又有画面」的部分。可选本地语音匹配，把词表里的脏话在预览里消音，并导出给达芬奇 / Final Cut 的时间线。</p>
 
         <!-- 下载与购买卡片 -->
         <div class="download-box">
@@ -49,6 +49,7 @@
                 <a id="btn-primary-download" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
                     免费下载 (Windows)
                 </a>
+                <a href="manual.html" class="btn btn-outline" style="min-width: 180px;">使用手册</a>
                 <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
                     购买永久 License ($)
                 </a>
@@ -87,8 +88,12 @@
         
         <div class="feature-grid">
             <div class="feature-box">
-                <h4>🎙️ 四种裁剪判定规则</h4>
-                <p>支持智能宽松 (有声或有动作)、播客模式 (仅认声音)、监控模式 (仅认动作) 与短视频严苛模式，契合任何制作流。</p>
+                <h4>🎙️ 静音与静止切片</h4>
+                <p>主界面勾选即可：只勾静音按声音切，只勾静止按画面切，两项都勾则必须有声且有画面才保留。阈值和前后留白在设置里调。</p>
+            </div>
+            <div class="feature-box">
+                <h4>🔇 本地脏话消音</h4>
+                <p>可选功能。语音在本机识别，只匹配你设置里的词表（可中英日韩西混排）。可消音或只在波形上标粉，不上传素材。</p>
             </div>
             <div class="feature-box">
                 <h4>⚡ 极速无损 Remux 导出</h4>

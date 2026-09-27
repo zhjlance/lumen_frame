@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Switcher 使用手册</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
+    <link rel="stylesheet" href="../../../style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="brand">
+            <img src="../../../assets/favicon-32.png" alt="Icon">
+            LumenFrame
+        </a>
+        <div class="nav-links">
+            <a href="index.html">产品页</a>
+            <a href="../../index.html">首页</a>
+            <div class="lang-switcher">
+                <select onchange="window.location.href=this.value;">
+                    <option value="/zh/products/lumen-switcher/manual.html" selected>🇨🇳 简体中文</option>
+                    <option value="/en/products/lumen-switcher/manual.html">🇬🇧 English</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <article class="manual">
+        <h1>Lumen Switcher 使用手册</h1>
+        <p class="lead">本地视频粗剪：去掉静音、去掉画面静止，可选把词表里的脏话消音，再导出 MP4 或给达芬奇 / Final Cut 用的时间线。分析在本机完成，素材不上云。</p>
+
+        <div class="toc">
+            <strong style="color:#fff;">目录</strong>
+            <ol>
+                <li><a href="#intro">软件能做什么</a></li>
+                <li><a href="#install">安装与试用</a></li>
+                <li><a href="#import">导入与播放</a></li>
+                <li><a href="#cut">静音 / 静止切片</a></li>
+                <li><a href="#swear">脏话检测与消音</a></li>
+                <li><a href="#wave">波形、预览与手动修正</a></li>
+                <li><a href="#export">导出成片与剪辑工程</a></li>
+                <li><a href="#settings">设置</a></li>
+                <li><a href="#license">试用到期与激活</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ol>
+        </div>
+
+        <h2 id="intro">1. 软件能做什么</h2>
+        <p>面向口播、课程、会议回放、监控片段的粗剪，不是成片调色工具。三类互不绑定：</p>
+        <ul>
+            <li><strong>静音片段</strong>：音量低于阈值的段落标为剔除（灰色）。</li>
+            <li><strong>画面静止</strong>：画面几乎不动的段落标为剔除（灰色）。</li>
+            <li><strong>脏话 / 敏感词</strong>：可选。本地识别对白，只匹配设置里的词表，命中段在波形上标粉，预览时可消音或只标记。</li>
+        </ul>
+        <p>分析完成后可看「原片」或「跳播预览」（跳过灰段，粉段按你选的动作处理），然后导出 MP4 或 FCPXML。</p>
+
+        <h2 id="install">2. 安装与试用</h2>
+        <ul>
+            <li>Windows：安装包 <code>.exe</code>。macOS：<code>.dmg</code>（Apple Silicon / Intel）。</li>
+            <li>首次安装起算 <strong>30 天日历试用</strong>（关机也计时）。卸载重装不会重新给你 30 天。</li>
+            <li>试用期内分析、导出可用。到期后仍可导入和播放，分析和导出锁定，输入购买的序列号后恢复。</li>
+            <li>需要本机 Whisper 模型文件 <code>ggml-tiny.bin</code>（与程序放在同一目录）才能做脏话检测。</li>
+        </ul>
+
+        <h2 id="import">3. 导入与播放</h2>
+        <ol>
+            <li>打开软件，导入 MP4 / MOV / MKV / AVI / TS。</li>
+            <li>右侧属性检测器显示文件名、路径、分辨率、总时长。</li>
+            <li>中间播放器可播原片。底部波形在分析前是空轨，分析中会逐渐画出峰值。</li>
+            <li>不支持的格式会提示，不会当视频打开。</li>
+        </ol>
+
+        <h2 id="cut">4. 静音 / 静止切片</h2>
+        <p>切割方式由主界面右侧三个检测项的勾选决定，设置里不再另选「切割模式」。</p>
+        <ul>
+            <li>只勾<strong>静音片段</strong>：按声音切。有人声的定格口播会留下，没声音的运动画面会去掉。</li>
+            <li>只勾<strong>画面静止</strong>：按画面切。有声音的定格会去掉，没声音但画面在动的会留下。</li>
+            <li>两项都勾：必须同时有声音和画面运动才保留。无声口播、定格解说都会去掉。</li>
+            <li>两项都不勾：不做音画裁切，整段时间线保留（仍可单独勾脏话）。</li>
+        </ul>
+        <p>「安全留白区」的前置 / 后置边缘会在保留段两端多留一点，避免把气口切死。静音阈值、画面阈值在设置里，数值越小越容易被判成静音 / 静止。</p>
+        <p>改勾选或留白后点「重新分析」。分析结束后跳播总时长会立刻更新，不必先点播放。</p>
+
+        <h2 id="swear">5. 脏话检测与消音</h2>
+        <ol>
+            <li>勾选「脏话 / 敏感词」。</li>
+            <li>下面动作选「静音（音频消音）」或「仅作标记」。</li>
+            <li>点分析。对白只在本机识别，然后和设置里的词表做最长匹配。</li>
+        </ol>
+        <p>词表规则：</p>
+        <ul>
+            <li>一行一个词，也可用逗号分隔。更长的短语优先，例如「操他妈的」会先于「操」。</li>
+            <li>界面语言换成日语 / 英语时，<strong>词表不会自动换</strong>。点「恢复默认词表」才换成<strong>当前界面语言</strong>的出厂表。</li>
+            <li>中文出厂表只有中文词。要消 <code>fuck</code> / <code>shit</code> 请自己加进去。</li>
+            <li>只匹配词表里出现的字符串，软件不会再偷偷补一套英文核心词。</li>
+        </ul>
+        <p class="note">识别受模型大小限制（默认 tiny）。口齿不清、中英混说可能漏标或多标。不准时用波形左键拖粉段边界，或到达芬奇里改音频缺口。</p>
+
+        <h2 id="wave">6. 波形、预览与手动修正</h2>
+        <ul>
+            <li><strong>绿</strong>保留　<strong>灰</strong>剔除　<strong>粉</strong>脏话　<strong>橙线</strong>你拖过的边界。</li>
+            <li>波形底部有时间刻度（00:00、00:30…）。</li>
+            <li>「原片」按源时间播放；「跳播预览」跳过灰段。脏话若选了静音，播到粉段会无声，画面还在。</li>
+            <li>粉段可用左键拖左右边界微调。分析刚结束粉条就会出现，不必先点播放。</li>
+        </ul>
+
+        <h2 id="export">7. 导出成片与剪辑工程</h2>
+        <h3>导出视频文件（MP4）</h3>
+        <p>按当前勾选和脏话动作生成成片。可选快速封装（关键帧切开，快）或精确重编码（切点准，慢）。灰段不会进成片；粉段在「静音」动作下听不见脏话。</p>
+        <h3>导出剪辑工程（FCPXML 等）</h3>
+        <p>给达芬奇、Final Cut 用。脏话消音在工程里表现为该段<strong>不带音频</strong>（画面仍在），时间线上音频会出现缺口，片段名类似「脏话_N」。识别不准时，在后期软件里把音频接回去或拉边界即可，不必回 Lumen 重导。</p>
+        <p>设置里的导出策略：「自动裁切」= 成片不含灰段；若保留废片，废片会以禁用/标记形式留在工程里便于复核。</p>
+
+        <h2 id="settings">8. 设置</h2>
+        <ul>
+            <li>外观主题、显示语言（中 / 英 / 日 / 韩 / 西）。点「应用」或「确认」后界面才切换，和 VS Code、Office 一样。</li>
+            <li>静音阈值（dB）、画面阈值。</li>
+            <li>脏话词表、恢复默认词表、恢复默认设置。</li>
+            <li>设备授权：粘贴购买的序列号并绑定。</li>
+        </ul>
+
+        <h2 id="license">9. 试用到期与激活</h2>
+        <p>标题栏显示试用剩余天数。到期后：</p>
+        <ul>
+            <li>可以导入视频并播放。</li>
+            <li>分析按钮变灰，文案为「分析已锁定」。</li>
+            <li>导出不可用。</li>
+        </ul>
+        <p>购买永久许可后，在设置里绑定序列号。一台设备一个指纹。卸载软件不会清掉试用起点。</p>
+
+        <h2 id="faq">10. 常见问题</h2>
+        <h3>为什么英文脏话没消？</h3>
+        <p>当前词表里没有这个词。中文界面恢复默认后只有中文。把需要的英文词加进词表再分析。</p>
+        <h3>为什么分析很慢？</h3>
+        <p>脏话检测按窗口在 CPU 上跑本地模型。没勾脏话时只扫声音和画面，会快很多。</p>
+        <h3>达芬奇里按空格还能听到脏话？</h3>
+        <p>看该段是否不带音频、名字是否带「脏话」。若整段音轨连续，说明工程不是按消音策略导的，或导入时没用这份 FCPXML。</p>
+        <h3>粉条要等播放才出现？</h3>
+        <p>当前版本分析结束就应画上。若没有，确认已勾选脏话且词表里有对得上的词，再点重新分析。</p>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 LumenFrame Studio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

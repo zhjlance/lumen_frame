@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Switcher User Manual</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
+    <link rel="stylesheet" href="../../../style.css?v=11">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="brand">
+            <img src="../../../assets/favicon-32.png" alt="Icon">
+            LumenFrame
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Product</a>
+            <a href="../../index.html">Home</a>
+            <div class="lang-switcher">
+                <select onchange="window.location.href=this.value;">
+                    <option value="/zh/products/lumen-switcher/manual.html">🇨🇳 简体中文</option>
+                    <option value="/en/products/lumen-switcher/manual.html" selected>🇬🇧 English</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <article class="manual">
+        <h1>Lumen Switcher User Manual</h1>
+        <p class="lead">Local rough-cut: drop silence, drop still frames, optionally mute words from your lexicon, then export an MP4 or a timeline for DaVinci Resolve / Final Cut Pro. Analysis stays on the machine.</p>
+
+        <div class="toc">
+            <strong style="color:#fff;">Contents</strong>
+            <ol>
+                <li><a href="#intro">What it does</a></li>
+                <li><a href="#install">Install and trial</a></li>
+                <li><a href="#import">Import and play</a></li>
+                <li><a href="#cut">Silence and still-frame slicing</a></li>
+                <li><a href="#swear">Profanity detect and mute</a></li>
+                <li><a href="#wave">Waveform, preview, fixes</a></li>
+                <li><a href="#export">Export video and timeline</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#license">Trial expiry and activation</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ol>
+        </div>
+
+        <h2 id="intro">1. What it does</h2>
+        <p>Built for talking-head, course, meeting, and similar rough cuts—not color grading. Three independent tools:</p>
+        <ul>
+            <li><strong>Silent segments</strong> — audio below the threshold is rejected (grey).</li>
+            <li><strong>Still frames</strong> — near-static picture is rejected (grey).</li>
+            <li><strong>Profanity / sensitive words</strong> — optional. Speech is recognized on device and matched only to your lexicon. Hits are purple on the waveform; preview can mute or mark only.</li>
+        </ul>
+        <p>After analysis, play Source or Skip Preview (skips grey; purple follows the action you picked), then export MP4 or FCPXML.</p>
+
+        <h2 id="install">2. Install and trial</h2>
+        <ul>
+            <li>Windows <code>.exe</code> installer; macOS <code>.dmg</code> (Apple Silicon and Intel).</li>
+            <li><strong>30-day calendar trial</strong> from first launch. Time counts while the PC is off. Reinstalling does not reset the trial.</li>
+            <li>During the trial, analysis and export work. After expiry you can still import and play; analysis and export lock until you bind a purchased key.</li>
+            <li>Profanity detection needs <code>ggml-tiny.bin</code> next to the app.</li>
+        </ul>
+
+        <h2 id="import">3. Import and play</h2>
+        <ol>
+            <li>Import MP4 / MOV / MKV / AVI / TS.</li>
+            <li>The inspector shows name, path, resolution, and duration.</li>
+            <li>The center player plays the source. The waveform fills in during analysis.</li>
+            <li>Unsupported files get an error instead of a crash.</li>
+        </ol>
+
+        <h2 id="cut">4. Silence and still-frame slicing</h2>
+        <p>Cut behavior is the checkboxes on the right—not a separate “slice mode” in Settings.</p>
+        <ul>
+            <li><strong>Silence only</strong> — cut by audio. A talking freeze-frame stays; moving picture with no voice goes.</li>
+            <li><strong>Still only</strong> — cut by picture. A talking freeze-frame goes; silent motion stays.</li>
+            <li><strong>Both</strong> — keep only spans that have voice and motion.</li>
+            <li><strong>Neither</strong> — no A/V cut. The full duration stays; you can still enable profanity.</li>
+        </ul>
+        <p>Start/end padding keeps a little room around keep segments. Silence and motion thresholds are in Settings. After you change checks or padding, click Re-analyze; skip-preview duration updates as soon as analysis finishes.</p>
+
+        <h2 id="swear">5. Profanity detect and mute</h2>
+        <ol>
+            <li>Check Profanity / sensitive words.</li>
+            <li>Choose Mute or Mark only.</li>
+            <li>Analyze. Matching is longest-phrase against your list only.</li>
+        </ol>
+        <ul>
+            <li>One word per line, or commas. Longer phrases win.</li>
+            <li>Switching the UI language does <strong>not</strong> swap the list. Reset list loads the factory list for the <strong>current UI language</strong>.</li>
+            <li>Chinese factory list is Chinese-only. Add <code>fuck</code> / <code>shit</code> yourself if you need them.</li>
+            <li>The engine does not inject a hidden English core list.</li>
+        </ul>
+        <p class="note">The bundled tiny model can miss or over-hit mixed speech. Drag purple edges on the waveform, or fix audio gaps in Resolve.</p>
+
+        <h2 id="wave">6. Waveform, preview, fixes</h2>
+        <ul>
+            <li><strong>Green</strong> keep · <strong>grey</strong> reject · <strong>purple</strong> profanity · <strong>orange</strong> manual edge.</li>
+            <li>Time ticks sit under the waveform.</li>
+            <li>Source plays the file clock. Skip Preview jumps grey. Mute makes purple silent with picture still on screen.</li>
+            <li>Drag purple edges with the left button. Marks appear when analysis ends—no need to press play first.</li>
+        </ul>
+
+        <h2 id="export">7. Export video and timeline</h2>
+        <h3>Export video (MP4)</h3>
+        <p>Fast remux at keyframes, or precise re-encode. Grey stays out of the file. Purple is silent in the file if you chose Mute.</p>
+        <h3>Export timeline (FCPXML and similar)</h3>
+        <p>For DaVinci Resolve and Final Cut. A muted swear is a video-only clip (no audio), named like <code>Profanity_N</code>. Stretch or restore audio in the NLE if the hit was wrong—no need to re-export from Lumen unless you want to.</p>
+
+        <h2 id="settings">8. Settings</h2>
+        <ul>
+            <li>Theme and UI language (Chinese / English / Japanese / Korean / Spanish). The UI updates on Apply or OK.</li>
+            <li>Silence threshold (dB) and motion threshold.</li>
+            <li>Profanity lexicon, Reset list, Restore defaults.</li>
+            <li>Paste a license key and bind the device.</li>
+        </ul>
+
+        <h2 id="license">9. Trial expiry and activation</h2>
+        <p>The title bar shows days left. After expiry:</p>
+        <ul>
+            <li>Import and playback still work.</li>
+            <li>Analyze is disabled (“Analysis Locked”).</li>
+            <li>Export is disabled.</li>
+        </ul>
+        <p>Bind a purchased key in Settings. One fingerprint per machine. Uninstalling does not restart the 30-day clock.</p>
+
+        <h2 id="faq">10. FAQ</h2>
+        <h3>English swears were not muted</h3>
+        <p>They are not in the current list. The Chinese factory list has no English words. Add them and re-analyze.</p>
+        <h3>Analysis feels slow</h3>
+        <p>Profanity runs a local model in windows on CPU. Silence/motion-only scans are much faster.</p>
+        <h3>Resolve still plays the swear</h3>
+        <p>That clip should have no audio and a profanity name. A continuous audio track means this FCPXML was not imported, or Mute was not selected at export.</p>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 LumenFrame Studio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

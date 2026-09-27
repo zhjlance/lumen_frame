@@ -174,3 +174,46 @@ body, html {
 .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
 .footer-links a:hover { color: var(--primary-color); }
+
+.manual {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    text-align: left;
+}
+.manual h1 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
+.manual .lead { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem; }
+.manual h2 {
+    color: #fff;
+    font-size: 1.35rem;
+    margin: 2.4rem 0 0.8rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.manual h3 { color: var(--primary-color); font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
+.manual p, .manual li { color: var(--text-muted); font-size: 0.98rem; }
+.manual ul, .manual ol { padding-left: 1.3rem; }
+.manual li { margin-bottom: 0.35rem; }
+.manual .toc {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0 2rem;
+}
+.manual .toc a { color: var(--primary-color); text-decoration: none; }
+.manual .toc a:hover { text-decoration: underline; }
+.manual code {
+    font-family: Consolas, monospace;
+    font-size: 0.88em;
+    background: rgba(255,255,255,0.06);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+.manual .note {
+    border-left: 3px solid var(--accent-color);
+    padding: 0.6rem 1rem;
+    background: rgba(251,191,36,0.06);
+    color: var(--text-muted);
+    margin: 1rem 0;
+}

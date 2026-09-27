@@ -36,7 +36,7 @@
     <div class="container hero" style="padding-bottom: 2rem;">
         <span class="badge">Native C++17 Hardware Accelerated · 100% Local Processing</span>
         <h1>Lumen Switcher</h1>
-        <p>Say goodbye to tedious manual cutting. Featuring smart dual-modal A/V gates to automatically purge silences and static scenes, instantly generating clean timelines for DaVinci Resolve and Final Cut Pro.</p>
+        <p>Local rough-cut tool: drop silent sections by audio, still sections by motion, or keep only clips that have both. Optionally mute words from your own lexicon in preview, then export a timeline for DaVinci Resolve or Final Cut Pro.</p>
 
         <!-- Download & Purchase Box -->
         <div class="download-box">
@@ -49,6 +49,7 @@
                 <a id="btn-primary-download-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
                     Free Trial (Windows)
                 </a>
+                <a href="manual.html" class="btn btn-outline" style="min-width: 180px;">User Manual</a>
                 <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
                     Buy Lifetime License ($)
                 </a>
@@ -87,8 +88,12 @@
         
         <div class="feature-grid">
             <div class="feature-box">
-                <h4>🎙️ 4 Intelligent Slice Modes</h4>
-                <p>Support for Intelligent (Audio OR Motion), Podcast (Audio Only), Security/Sports (Motion Only), and Strict modes for versatile workflows.</p>
+                <h4>🎙️ Silence &amp; still-frame slicing</h4>
+                <p>Checkboxes on the main window: silence-only, still-only, or both (keep clips that have audio and motion). Thresholds and padding live in Settings.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🔇 On-device profanity mute</h4>
+                <p>Optional. Speech is recognized locally and matched only against your lexicon. Mute the hit or mark it on the waveform. Media never leaves the PC.</p>
             </div>
             <div class="feature-box">
                 <h4>⚡ Ultra-Fast Lossless Remux</h4>
