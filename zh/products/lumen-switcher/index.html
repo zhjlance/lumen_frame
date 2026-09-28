@@ -40,23 +40,26 @@
 
         <!-- 下载与购买卡片 -->
         <div class="download-box">
-            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">下载桌面端安装包</h3>
+            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">获取 Lumen Switcher</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
-                首次安装即享 <strong>30 天全功能免费试用</strong>，体验满意后可随时购买永久许可证。Windows 也可从 Microsoft Store 获取（商店价 $0，试用与许可规则相同）。
+                首次安装即享 <strong>30 天全功能免费试用</strong>，体验满意后可购买永久许可证。Windows 请优先从 Microsoft Store 安装（商店标价 $0，试用与许可规则相同，系统不会提示不受信任）。
             </p>
 
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a id="btn-primary-download" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
-                    免费下载 (Windows)
+                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px;" target="_blank" rel="noopener">
+                    推荐：Microsoft Store
                 </a>
-                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn btn-outline" style="min-width: 180px;" target="_blank" rel="noopener">
-                    Microsoft Store
+                <a id="btn-primary-download" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn btn-outline" style="min-width: 180px;">
+                    官网安装包 (Windows)
                 </a>
                 <a href="manual.html" class="btn btn-outline" style="min-width: 180px;">使用手册</a>
                 <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
                     购买永久 License ($)
                 </a>
             </div>
+            <p id="web-install-note" style="color: var(--text-muted); font-size: 0.82rem; margin: 1.1rem 0 0; line-height: 1.6;">
+                官网安装包未经过商店签名。若出现「Windows 已保护你的电脑」或「未知发布者」，请点「更多信息」，再点「仍要运行」。这是 SmartScreen 对未建立声誉的安装包的常规提示，不是病毒报警。
+            </p>
 
             <div style="margin-top: 1.5rem;">
                 <a id="link-alt-platform" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
@@ -77,10 +80,14 @@
                 var alt = document.getElementById('link-alt-platform');
                 var sha = document.getElementById('label-sha256');
                 btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
-                btn.innerText = "免费下载 (macOS .dmg)";
+                btn.innerText = "官网安装包 (macOS .dmg)";
                 alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
-                alt.innerText = "切换至 Windows 版本 (.exe) 下载";
+                alt.innerText = "切换至 Windows 官网安装包 (.exe)";
                 sha.innerText = "macOS 镜像已签名公证 · 原生支持 Apple Silicon 与 Intel";
+                var note = document.getElementById('web-install-note');
+                if (note) {
+                    note.innerText = "macOS 若提示「无法验证开发者」，请在系统设置 → 隐私与安全性中允许打开，或右键选择打开。";
+                }
             }
         </script>
     </div>

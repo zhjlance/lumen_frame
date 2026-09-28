@@ -40,23 +40,26 @@
 
         <!-- Download & Purchase Box -->
         <div class="download-box">
-            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">Download Desktop App</h3>
+            <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">Get Lumen Switcher</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
-                Enjoy an unrestricted <strong>30-day full-feature free trial</strong> upon installation. Purchase a lifetime license anytime. Windows is also available on the Microsoft Store (listed at $0; same trial and license rules).
+                Enjoy a <strong>30-day full-feature free trial</strong>, then buy a lifetime license anytime. On Windows, install from the Microsoft Store first (listed at $0; same trial and license). Store installs are signed by Microsoft and do not show an untrusted-app warning.
             </p>
 
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a id="btn-primary-download-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn" style="min-width: 180px;">
-                    Free Trial (Windows)
+                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px;" target="_blank" rel="noopener">
+                    Recommended: Microsoft Store
                 </a>
-                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn btn-outline" style="min-width: 180px;" target="_blank" rel="noopener">
-                    Microsoft Store
+                <a id="btn-primary-download-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn btn-outline" style="min-width: 180px;">
+                    Website installer (Windows)
                 </a>
                 <a href="manual.html" class="btn btn-outline" style="min-width: 180px;">User Manual</a>
                 <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
                     Buy Lifetime License ($)
                 </a>
             </div>
+            <p id="web-install-note-en" style="color: var(--text-muted); font-size: 0.82rem; margin: 1.1rem 0 0; line-height: 1.6;">
+                The website installer is not Store-signed. If Windows shows “Windows protected your PC” or “Unknown publisher”, click More info, then Run anyway. That is SmartScreen on an unsigned or new publisher—not a malware verdict.
+            </p>
 
             <div style="margin-top: 1.5rem;">
                 <a id="link-alt-platform-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
@@ -77,10 +80,14 @@
                 var alt = document.getElementById('link-alt-platform-en');
                 var sha = document.getElementById('label-sha256-en');
                 btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
-                btn.innerText = "Free Trial (macOS .dmg)";
+                btn.innerText = "Website installer (macOS .dmg)";
                 alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
-                alt.innerText = "Switch to Windows (.exe) download";
+                alt.innerText = "Switch to Windows website installer (.exe)";
                 sha.innerText = "macOS DMG Notarized & Signed · Native Apple Silicon & Intel support";
+                var note = document.getElementById('web-install-note-en');
+                if (note) {
+                    note.innerText = "If macOS says the app cannot be verified, allow it in System Settings → Privacy & Security, or open it from the context menu.";
+                }
             }
         </script>
     </div>
