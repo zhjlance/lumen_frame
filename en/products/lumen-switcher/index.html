@@ -6,14 +6,7 @@
     <title>Lumen Switcher | High-Performance AI Video Rough-Cut Engine</title>
     <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
     <link rel="stylesheet" href="../../../style.css?v=10">
-    
-    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-    <script type="text/javascript">
-        Paddle.Environment.set('production'); 
-        Paddle.Initialize({ 
-            token: 'live_6bc00f2e74e6adf39009e06a494' 
-        });
-    </script>
+    <!-- Paddle Scripts removed for MoR compliance migration -->
 </head>
 <body>
     <nav class="navbar">
@@ -42,7 +35,7 @@
         <div class="download-box">
             <h3 style="margin-top: 0; color: #fff; font-size: 1.6rem;">Get Lumen Switcher</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
-                Enjoy a <strong>30-day full-feature free trial</strong>, then buy a lifetime license anytime. On Windows, install from the Microsoft Store first (listed at $0; same trial and license). Store installs are signed by Microsoft and do not show an untrusted-app warning.
+                Enjoy a <strong>30-day full-feature free trial</strong>. Upgrade to a lifetime license anytime for continuous production. On Windows, install from the Microsoft Store first (listed at $0; same trial and license).
             </p>
 
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
@@ -53,10 +46,21 @@
                     Website installer (Windows)
                 </a>
                 <a href="manual.html" class="btn btn-outline" style="min-width: 180px;">User Manual</a>
-                <a href="#!" class="btn btn-outline" onclick="Paddle.Checkout.open({ items: [{ priceId: 'pri_01m10xc9mznqn3tn1xjw95y7bh', quantity: 1 }] }); return false;">
-                    Buy Lifetime License ($)
+                <!-- Explicit Price & Placeholder URL for Lemon Squeezy -->
+                <a href="https://lumenframestudio.lemonsqueezy.com/" class="btn" style="min-width: 180px; background: var(--accent-color); color: #000;">
+                    Buy Lifetime License — $29.00
                 </a>
             </div>
+
+            <!-- Mandatory Compliance Notice -->
+            <div style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--text-muted);">
+                🔒 14-Day Money-Back Guarantee · Local Offline Processing · One-Time Payment
+                <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">
+                    By purchasing, you agree to our <a href="/legal/terms.html" style="color: var(--primary-color);">Terms of Service</a> and <a href="/legal/refund.html" style="color: var(--primary-color);">Refund Policy</a>.
+                </span>
+            </div>
+
             <p id="web-install-note-en" style="color: var(--text-muted); font-size: 0.82rem; margin: 1.1rem 0 0; line-height: 1.6;">
                 The website installer is not Store-signed. If Windows shows “Windows protected your PC” or “Unknown publisher”, click More info, then Run anyway. That is SmartScreen on an unsigned or new publisher—not a malware verdict.
             </p>
