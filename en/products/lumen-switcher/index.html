@@ -37,14 +37,8 @@
             </p>
 
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px;" target="_blank" rel="noopener">
-                    Microsoft Store
-                </a>
-                <a id="btn-primary-download-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn btn-outline" style="min-width: 180px;">
-                    Direct Installer (.exe)
-                </a>
-                <a href="https://www.creem.io/payment/prod_6Sg2WoqnQttybq7cSfsd5c" class="btn" style="min-width: 180px; background: var(--accent-color); color: #000;">
-                    Buy Lifetime License — $29.00
+                <a id="btn-primary-download-en" href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px; background: var(--accent-color); color: #000;" target="_blank" rel="noopener">
+                    Get it from Microsoft (Windows)
                 </a>
             </div>
 
@@ -56,19 +50,21 @@
                 </span>
             </div>
 
-            <p id="web-install-note-en" style="color: var(--text-muted); font-size: 0.82rem; margin: 1.1rem 0 0; line-height: 1.6;">
-                The website installer is not Store-signed. If Windows shows “Windows protected your PC” or “Unknown publisher”, click More info, then Run anyway. That is SmartScreen on an unsigned or new publisher—not a malware verdict.
-            </p>
-
             <div style="margin-top: 1.5rem;">
                 <a id="link-alt-platform-en" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
                     Switch to macOS (.dmg) download
                 </a>
             </div>
+            
+            <div id="macos-purchase-area-en" style="display: none; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="https://www.creem.io/payment/prod_6Sg2WoqnQttybq7cSfsd5c" class="btn btn-outline" style="min-width: 180px;">
+                    Buy macOS Lifetime License — $29.00
+                </a>
+            </div>
 
             <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
                 <span id="label-sha256-en" style="font-size: 0.75rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.8;">
-                    SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
+                    Officially reviewed, distributed, and billed by Microsoft
                 </span>
             </div>
         </div>
@@ -78,15 +74,17 @@
                 var btn = document.getElementById('btn-primary-download-en');
                 var alt = document.getElementById('link-alt-platform-en');
                 var sha = document.getElementById('label-sha256-en');
+                var macPurchase = document.getElementById('macos-purchase-area-en');
+                
                 btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
                 btn.innerText = "Website installer (macOS .dmg)";
-                alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
-                alt.innerText = "Switch to Windows website installer (.exe)";
+                
+                alt.href = "https://apps.microsoft.com/detail/9P791GRTM21Q";
+                alt.innerText = "Switch to Windows Microsoft Store version";
+                alt.target = "_blank";
+                
                 sha.innerText = "macOS DMG Notarized & Signed · Native Apple Silicon & Intel support";
-                var note = document.getElementById('web-install-note-en');
-                if (note) {
-                    note.innerText = "If macOS says the app cannot be verified, allow it in System Settings → Privacy & Security, or open it from the context menu.";
-                }
+                macPurchase.style.display = "flex";
             }
         </script>
     </div>

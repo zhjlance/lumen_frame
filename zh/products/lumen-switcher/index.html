@@ -37,14 +37,8 @@
             </p>
 
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px;" target="_blank" rel="noopener">
-                    Microsoft Store
-                </a>
-                <a id="btn-primary-download" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe" class="btn btn-outline" style="min-width: 180px;">
-                    官网安装包 (Windows)
-                </a>
-                <a href="https://www.creem.io/payment/prod_6Sg2WoqnQttybq7cSfsd5c" class="btn" style="min-width: 180px; background: var(--accent-color); color: #000;">
-                    购买永久 License ($29.00)
+                <a id="btn-primary-download" href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn" style="min-width: 180px; background: var(--accent-color); color: #000;" target="_blank" rel="noopener">
+                    从 Microsoft Store 获取 (Windows)
                 </a>
             </div>
 
@@ -56,19 +50,21 @@
                 </span>
             </div>
 
-            <p id="web-install-note" style="color: var(--text-muted); font-size: 0.82rem; margin: 1.1rem 0 0; line-height: 1.6;">
-                官网安装包未经过商店签名。若出现「Windows 已保护你的电脑」或「未知发布者」，请点「更多信息」，再点「仍要运行」。这是 SmartScreen 对未建立声誉的安装包的常规提示，不是病毒报警。
-            </p>
-
             <div style="margin-top: 1.5rem;">
                 <a id="link-alt-platform" href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: underline;">
                     切换至 macOS 版本 (.dmg) 下载
                 </a>
             </div>
+            
+            <div id="macos-purchase-area" style="display: none; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="https://www.creem.io/payment/prod_6Sg2WoqnQttybq7cSfsd5c" class="btn btn-outline" style="min-width: 180px;">
+                    购买 macOS 永久 License ($29.00)
+                </a>
+            </div>
 
             <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
                 <span id="label-sha256" style="font-size: 0.75rem; color: var(--text-muted); font-family: 'Consolas', monospace; word-break: break-all; opacity: 0.8;">
-                    SHA256: d820f2db515690d655e8c2014a1de0a1bd0be33d7de1157b68bae536564ece27
+                    由微软商店官方审核、分发与结算
                 </span>
             </div>
         </div>
@@ -78,15 +74,17 @@
                 var btn = document.getElementById('btn-primary-download');
                 var alt = document.getElementById('link-alt-platform');
                 var sha = document.getElementById('label-sha256');
+                var macPurchase = document.getElementById('macos-purchase-area');
+                
                 btn.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.dmg";
                 btn.innerText = "官网安装包 (macOS .dmg)";
-                alt.href = "https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer.exe";
-                alt.innerText = "切换至 Windows 官网安装包 (.exe)";
+                
+                alt.href = "https://apps.microsoft.com/detail/9P791GRTM21Q";
+                alt.innerText = "切换至 Windows Microsoft Store 版";
+                alt.target = "_blank";
+                
                 sha.innerText = "macOS 镜像已签名公证 · 原生支持 Apple Silicon 与 Intel";
-                var note = document.getElementById('web-install-note');
-                if (note) {
-                    note.innerText = "macOS 若提示「无法验证开发者」，请在系统设置 → 隐私与安全性中允许打开，或右键选择打开。";
-                }
+                macPurchase.style.display = "flex";
             }
         </script>
     </div>
