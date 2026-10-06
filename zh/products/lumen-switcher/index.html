@@ -37,9 +37,16 @@
         }
         .btn-full {
             width: 100%;
-            margin-bottom: 12px;
+            margin-bottom: 0;
             box-sizing: border-box;
             text-align: center;
+        }
+        .platform-note {
+            min-height: 1.2rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.8;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -87,6 +94,7 @@
                     <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn btn-full" style="background: var(--accent-color); color: #000;" target="_blank" rel="noopener">
                         前往 Microsoft Store 获取
                     </a>
+                    <div class="platform-note"></div>
                 </div>
                 <!-- macOS Platform -->
                 <div class="platform-card">
@@ -101,9 +109,7 @@
                     <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/Lumen_Switcher_macOS.dmg" class="btn btn-full" style="background: var(--accent-color); color: #000;">
                         下载 macOS 安装包
                     </a>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.8; margin-top: 5px;">
-                        打开 DMG 后拖入 Applications
-                    </div>
+                    <div class="platform-note">打开 DMG 后拖入 Applications</div>
                 </div>
             </div>
             <!-- Global Purchase Area -->
