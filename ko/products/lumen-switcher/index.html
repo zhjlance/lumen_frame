@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Switcher | 로컬 러프컷</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon-32.png">
+    <link rel="stylesheet" href="../../../style.css?v=13">
+    <style>
+        .platform-card { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 2.5rem 1.5rem; flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; }
+        .os-logo { margin-bottom: 1rem; height: 48px; width: auto; }
+        .platform-desc { color: var(--text-muted); font-size: .85rem; margin-bottom: 1.5rem; text-align: center; }
+        .btn-full { width: 100%; margin-bottom: 12px; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../../index.html" class="brand"><img src="../../../assets/favicon-32.png" alt="Icon"> LumenFrame</a>
+        <div class="nav-links">
+            <a href="../../index.html">홈</a>
+            <a href="../../about.html">소개</a>
+            <div class="lang-switcher">
+                <select onchange="window.location.href=this.value;">
+                    <option value="/zh/products/lumen-switcher/index.html">简体中文</option>
+                    <option value="/en/products/lumen-switcher/index.html">English</option>
+                    <option value="/ja/products/lumen-switcher/index.html">日本語</option>
+                    <option value="/ko/products/lumen-switcher/index.html" selected>한국어</option>
+                    <option value="/es/products/lumen-switcher/index.html">Español</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <div class="container hero" style="padding-bottom:2rem;">
+        <span class="badge">네이티브 C++17 | 100% 로컬 처리</span>
+        <h1>Lumen Switcher</h1>
+        <p>무음, 정지 화면, 선택적 단어 음소거를 로컬에서 처리하고 DaVinci Resolve / Final Cut 타임라인을 내보냅니다.</p>
+        <div class="download-box" style="max-width:900px; padding:3rem 2rem;">
+            <h3 style="margin-top:0; color:#fff; font-size:1.8rem;">Lumen Switcher 받기</h3>
+            <p style="color:var(--text-main); margin-bottom:2.5rem;">처음 설치하면 <strong>30일 전체 기능</strong>을 무료로 씁니다.</p>
+            <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+                <div class="platform-card">
+                    <h4 style="color:#fff;">Windows 10 / 11</h4>
+                    <p class="platform-desc">Microsoft Store 설치를 권장합니다. 심사, 업데이트, 결제는 Microsoft가 담당합니다.</p>
+                    <a href="https://apps.microsoft.com/detail/9P791GRTM21Q" class="btn btn-full" style="background:var(--accent-color); color:#000;" target="_blank" rel="noopener">Microsoft Store에서 받기</a>
+                    <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/LumenSwitcher-Installer-v1.0.0.exe" style="font-size:.8rem; color:var(--text-muted);">스토어를 쓸 수 없으면 설치 파일</a>
+                </div>
+                <div class="platform-card">
+                    <h4 style="color:#fff;">macOS 11+</h4>
+                    <p class="platform-desc">직접 다운로드. Developer ID 서명과 Apple 공증 완료. Apple Silicon(M 시리즈)용입니다.</p>
+                    <a href="https://github.com/zhjlance/LumenSwitcher-Releases/releases/latest/download/Lumen_Switcher_macOS.dmg" class="btn btn-full" style="background:var(--accent-color); color:#000;">macOS 다운로드</a>
+                    <div style="font-size:.75rem; color:var(--text-muted);">DMG를 열고 Applications로 드래그</div>
+                </div>
+            </div>
+            <div style="margin-top:2rem;">
+                <a href="https://www.creem.io/payment/prod_6Sg2WoqnQttybq7cSfsd5c" class="btn" style="background:var(--accent-color); color:#000; padding:.8rem 2rem;">평생 라이선스 구매 ($29.00)</a>
+            </div>
+            <div style="margin-top:2rem; color:var(--text-muted); font-size:.85rem;">14일 환불 | 로컬 처리 | 일시불</div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 style="text-align:center; color:#fff;">러프컷을 빠르게 하는 이유</h2>
+        <div class="feature-grid">
+            <div class="feature-box"><h4>무음과 정지 화면 컷</h4><p>소리만, 화면만, 또는 둘 다. 기준값은 설정에 있습니다.</p></div>
+            <div class="feature-box"><h4>기기 안 단어 음소거</h4><p>내 단어장과만 비교합니다. 원본은 나가지 않습니다.</p></div>
+            <div class="feature-box"><h4>타임라인 내보내기</h4><p>DaVinci Resolve와 Final Cut용. 오검출은 NLE에서 고치면 됩니다.</p></div>
+        </div>
+    </div>
+</body>
+</html>
